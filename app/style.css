@@ -1,0 +1,100 @@
+
+/*------Hero--------*/
+.hero {
+    max-width: 100vw;
+    background-color: #eee;
+    height: 500px;
+}
+.hero section{
+    background: none;
+}
+.hero .hero-texts{
+    grid-column: span 6;
+}
+
+.hero .hero-img{
+    grid-column: span 6;
+}
+
+
+
+
+@media (max-width: 800px) {
+    .hero section{
+        display: block;
+        padding-bottom: 1rem;
+    }
+
+    .hero .hero-texts{
+        margin-bottom: 1rem;
+    }
+}
+
+/*--------categories----------*/
+.categories section{
+    width: 100vw;
+}
+.cat-card{
+    grid-column: span 2;
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    .categories section{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    scrollbar-width: auto;
+    overflow-x: scroll;
+}
+.cat-card{
+    width: 200px;
+    text-align: center;
+}
+.cat-card img{
+    width: 60px;
+}
+}
+/*--------Featured-----------*/
+.featured-products {
+    padding-top: 2rem;
+}
+.featured-products h2{
+    padding-top: 2rem;
+}
+/*--------cetagory-product-------*/ 
+.cat-container{
+    padding: 2rem 0;
+}
+.cat-container .scroll-container{
+    justify-content: space-between;
+    align-items: start;
+    height: 400px;
+    overflow-y: scroll;
+    grid-column: span 9;
+}
+.cat-container .texts{
+    grid-column: span 3;
+}
+.cat-container section{
+    justify-content: space-between;
+    padding: 2rem;
+}
+.cat-container .scroll-container .card{
+    grid-column: span 4;
+}
+
+@media (max-width: 800px) {
+   .cat-container .texts{
+    grid-column: span 12;
+} 
+.cat-container .texts img{
+    max-width: 360px;
+}
+.cat-container .scroll-container{
+    grid-column: span 12;
+}
+.cat-container .scroll-container .card{
+    grid-column: span 6;
+}
+}

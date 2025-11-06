@@ -1,0 +1,11 @@
+
+
+.products .card{
+    grid-column: span 3;
+}
+
+@media (max-width: 800px) {
+    .products .card{
+        grid-column: span 6;
+    }
+}
