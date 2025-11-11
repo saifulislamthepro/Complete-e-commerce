@@ -27,7 +27,6 @@ a {
 
 section{
   max-width: 1200px;
-  background-color: #c3c3c3;
   width: 100%;
   padding: 0 2rem;
 }
@@ -42,10 +41,15 @@ section{
 .grid{
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 1rem;
+  gap: 10px;
   grid-template-rows: auto;
 }
 
 .page{
   margin-top: 60px;
+}
+
+.column{
+  flex-direction: column;
+  align-items: flex-start;
 }

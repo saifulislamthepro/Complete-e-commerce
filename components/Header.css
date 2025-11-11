@@ -7,6 +7,7 @@
 }
 .navbar.scrolled{
   background: #fff;
+  color: #333;
 }
 
 .navbar-container {
@@ -47,14 +48,12 @@
   position: relative;
   height: 100%;
 }
-.dropdown-toggle a:hover{
-  width: 100%;
-}
+
 .dropdown-menu {
   position: absolute;
   left: 0;
   top: 40;
-  width: 100%;
+  width: 100vw;
   background-color: #f1f1f1;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   display: none;
@@ -123,12 +122,6 @@
   .hamburger {
     display: flex;
     gap: 7px;
-  }
-  .dropdown-menu{
-    position: static;
-    margin-top: 30;
-    width: 100%;
-    margin-left: 2rem;
   }
   .hamburger .bar{
     rotate: 0deg;

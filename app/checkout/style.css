@@ -1,0 +1,83 @@
+
+.checkout section{
+    margin-bottom: 2rem;
+}
+.page-title {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    font-size: larger;
+    background-color: #eee;
+    margin-bottom: 2rem;
+}
+.checkout form, .checkout .order-summary {
+    grid-column: span 6;
+    background-color: #eee;
+    padding: 1rem;
+}
+
+.checkout form h2{
+    grid-column: span 12;
+    text-align: left;
+}
+.checkout form div {
+    grid-column: span 6;
+}
+
+.checkout form div label{
+    display: block;
+}
+
+.checkout form .address, .checkout .notes{
+    grid-column: span 12;
+}
+
+.checkout form textarea{
+    width: 100%;
+    padding: 1rem;
+}
+.checkout form input{
+    width: 100%;
+    height: 40px;
+    padding: 1rem;
+}
+.checkout form button{
+    grid-column: span 6;
+    margin-bottom: 2rem;
+    height: 40px;
+}
+
+/*-------Order Summary-------*/
+.checkout .order-summary{
+    border: 1px dotted #555;
+}
+.checkout .order-summary h2{
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.order-summary div{
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.order-summary hr{
+    margin: 1rem 0;
+}
+.order-summary .cod{
+    margin-top: 2rem;
+}
+
+.order-summary .btn button{
+    width: 100%;
+    height: 40px;
+    margin-top: 1rem;
+}
+
+@media (max-width: 800px) {
+    .checkout section{
+        display: flex;
+        flex-direction: column;
+    }
+
+}

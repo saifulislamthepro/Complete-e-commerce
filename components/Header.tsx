@@ -43,20 +43,20 @@ export default function Navbar() {
         <Link href="/" className="logo">SmartGen</Link>
 
         <nav className={`nav-links ${mobileOpen ? "open" : ""}`}>
-          <Link href="/products">All Products</Link>
+          <Link href="/products"><i className="fa fa-shopping-cart" aria-hidden="true"></i></Link>
 
           <div className="dropdown">
             <div className="dropdown-toggle" onClick={() => setDropdownOpen(!dropdownOpen)}>
-              <a href="/#categories">Categories ▾</a>
+              <Link href="/#categories">Categories ▾</Link>
               <div className="dropdown-menu">
-                <Link href="/products?category=apparel">Apparel</Link>
-                <Link href="/products?category=tech">Tech</Link>
-                <Link href="/products?category=accessories">Accessories</Link>
+                <Link href="/products?category=apparel">Jeans</Link>
+                <Link href="/products?category=tech">Shirts</Link>
+                <Link href="/products?category=accessories">Punjabi</Link>
               </div>
             </div>
           </div>
 
-          <Link href="/cart"><i className="fa fa-shopping-cart" aria-hidden="true"></i></Link>
+          <Link href="/dashboard"><i className="fa fa-user" aria-hidden="true"></i></Link>
         </nav>
 
         <div

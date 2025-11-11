@@ -31,8 +31,12 @@ export default function SizeQty() {
                     </div>
                 </div>
             </div>
-            <button>Order Now</button>
-            <button>Add to Cart</button>
+            <a href="/checkout">
+                <button>Order Now</button>
+            </a>
+            <a href="/cart">
+                <button>Add to Cart</button>
+            </a>
         </div>
     )
 }
