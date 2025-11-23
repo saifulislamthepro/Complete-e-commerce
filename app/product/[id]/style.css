@@ -14,12 +14,15 @@
 .single-product .image-container{
     grid-column: span 6;
 }
+
+.single-product .image-container img{
+    width: 100%;
+}
 .single-product .details{
     grid-column: span 6;
 }
 .single-product .details>h2{
     margin-bottom: 1rem ;
-    background-color: #fff;
 }
 .single-product .details>p{
     margin-top: 2rem;
@@ -33,6 +36,16 @@
 .related .products section{
     margin: 0;
     padding: 0;
+}
+
+.single-product .description {
+    background-color: #fff;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.single-product .description ul {
+    margin-left: 1rem;
 }
 
 @media (max-width: 800px) {

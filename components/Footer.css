@@ -1,76 +1,82 @@
 .footer {
-  background-color: #333;
-  color: #ccc;
-  padding: 60px 20px 30px;
-  font-family: 'Segoe UI', sans-serif;
+  background: #000; /* Black */
+  color: #fff;
+  padding: 60px 20px 20px;
+  border-top: 5px solid #ff7a00; /* Orange Accent */
+  font-family: "Poppins", sans-serif;
 }
 
 .footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: auto;
-  gap: 40px;
-}
-.footer-section {
-  flex: 1 1 220px;
-  min-width: 200px;
-  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-.footer-section h2,
-.footer-section h3 {
-  color: #fff;
-  margin-bottom: 15px;
-}
-
-.footer-section p,
-.footer-section ul {
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-section ul li {
+.footer-section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ff7a00; /* Orange */
   margin-bottom: 10px;
 }
 
-.footer-section a {
+.footer-section p {
+  font-size: 14px;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #0b9b53; /* Deep Green */
+}
+
+.footer-section ul li {
+  list-style: none;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.footer-section ul li a {
   color: #ccc;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: 0.3s;
 }
 
-.footer-section a:hover {
-  color: #fff;
-}
-
-.footer-section i {
-  margin-right: 8px;
+.footer-section ul li a:hover {
+  color: #ff7a00; /* Orange on hover */
 }
 
 .social-icons a {
   display: inline-block;
   margin-right: 12px;
   font-size: 18px;
-  color: #ccc;
-  transition: color 0.3s;
+  color: #fff;
+  background: #0b9b53; /* Deep green */
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.3s;
 }
 
 .social-icons a:hover {
-  color: #fff;
+  background: #ff7a00; /* Orange Hover */
+  transform: translateY(-3px);
 }
 
 .footer-bottom {
   text-align: center;
-  margin-top: 40px;
-  font-size: 13px;
-  color: #777;
+  padding: 15px 0 0;
+  margin-top: 20px;
+  color: #888;
+  font-size: 14px;
   border-top: 1px solid #333;
-  padding-top: 20px;
 }

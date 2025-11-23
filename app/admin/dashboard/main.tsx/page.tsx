@@ -1,11 +1,44 @@
+
+'use client'
+
 import CreateProduct from "@/components/CreateProduct";
+import AdminProducts from "@/components/AdminProducts"
 import "./style.css"
 
-import Settings from "@/components/Settings";
 
+import Settings from "@/components/Settings";
+import { useEffect, useState } from "react";
+import AdminOrdersPage from "@/components/Orderlists";
+
+type Product = {
+    title: string,
+    price: number,
+    stock: string[],
+    category: string,
+    description: string,
+    images: File[]
+}
 
 export default function MainPage( {activeSidebar}: {activeSidebar: string} ) {
 
+    const [mounted, setMounted] = useState(false)
+    const [Products, setProduct] = useState([]);
+
+
+    const fetchProducts = async() => {
+        const res = await fetch("/api/products");
+
+        const data = await res.json();
+        setProduct(data);
+    }
+useEffect(()=>{
+
+    fetchProducts();
+    setMounted(true);
+
+},[])
+ 
+if (!mounted) return null;
 
     if (activeSidebar === 'create') 
         return (
@@ -19,14 +52,14 @@ export default function MainPage( {activeSidebar}: {activeSidebar: string} ) {
         return (
             <div className="main-page">
                 <h3>Products</h3>
-                <p>This is the create page where you can add new products.</p>
+                <AdminProducts/>
             </div>
         );
     else if (activeSidebar === 'orders') 
         return (
             <div className="main-page">
                 <h3>Orders</h3>
-                <p>This is the orders page where you can manage orders.</p>
+                <AdminOrdersPage/>
             </div>
         );
     else if (activeSidebar === 'customers') 

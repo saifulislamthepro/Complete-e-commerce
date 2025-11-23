@@ -1,0 +1,13 @@
+
+
+.category-product-page section h3{
+    text-align: center;
+    width: 100%;
+    background-color: #eee;
+    padding: 2rem 0;
+    margin-bottom: 1rem;
+}
+
+.category-product-page section{
+    margin-bottom: 1rem;
+}

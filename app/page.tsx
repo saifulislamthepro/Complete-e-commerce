@@ -1,41 +1,68 @@
+"use server"
+
+import { connectDB } from "@/lib/db";
+import Product from "@/models/Product";
+import Category from "@/models/Category";
 
 import Categories from "@/components/Categories";
-import "./style.css"
 import Featured from "@/components/Featured";
 import Hero from "@/components/Hero";
 import Products from "@/components/Products";
 
-export default function Home() {
-  return (
-    <div className="">
+import { ProductType } from "@/types/product";
+import { CategoryType } from "@/types/category";
 
+import "./style.css";
+import CatProductSlider from "@/components/CatProducts";
+
+export default async function Home() {
+  await connectDB();
+
+  const products: ProductType[] =JSON.parse(JSON.stringify( await Product.find({})));
+  const categories: CategoryType[] = JSON.parse(JSON.stringify( await Category.find({})));
+
+  return (
+    <div className="page">
       <div className="hero flex">
-        <Hero/>
+        <Hero />
       </div>
 
       <div className="categories flex">
-        <Categories/>
+        <Categories />
       </div>
 
       <div className="featured-products">
-        <div className="flex">
-          <section><h2>FEATURED PRODUCTS</h2></section>
-        </div>
-        <Products/>
+        <Products products={products} />
       </div>
-      
-        <div className="cat-container flex">  
-          <section className="grid">  
-              <div className="texts flex">
-                <img src="/vercel.svg" alt="" />
+
+      <div className="cat-container flex">
+        {categories.map((cat) => {
+          // Filter products for this category
+          const matchedProducts = products.filter(
+            (p) => p.category === cat.slug
+          );
+
+          // If no products for this category → skip rendering
+          if (matchedProducts.length === 0) return null;
+
+          return (
+            <section className="grid" key={cat.slug}>
+              {/* LEFT SIDE */}
+              <div className="texts flex column">
+                {cat.image && <img src={cat.image} alt={cat.slug} />}
+                <h3>{cat.name}</h3>
               </div>
-            <div className="scroll-container flex">
-              <div className="scroll">
-                <Products/>
+
+              {/* RIGHT SIDE — pass full filtered array ONCE */}
+              <div className="cat-product">
+                <CatProductSlider products={matchedProducts} />
               </div>
-            </div>
-          </section>      
-        </div>
+            </section>
+          );
+        })}
+      </div>
+
+
     </div>
   );
 }

@@ -1,37 +1,41 @@
+'use client'
+
+import { useEffect, useState } from "react"
 
 
+type Categories = {
+  name: string,
+  slug: string,
+  image: string
+}
 
 export default function Categories () {
 
+  const [categories, setCategories] = useState<Categories []>([{
+    name: "",
+    slug: "",
+    image: ""
+  }]);
 
+  useEffect(()=> {
+    const fetchCategories = async() => {
+      const res = await fetch('/api/categories')
+      const data = await res.json();
+      setCategories(data);
+    }
+
+    fetchCategories();
+  },[])
 
 
     return(
-        <section className="grid">
-          <div className="cat-card">
-            <img src="/vercel.svg" alt="image" />
-            <h2>Mens</h2>
-          </div>
-          <div className="cat-card">
-            <img src="/vercel.svg" alt="image" />
-            <h2>Women</h2>
-          </div>
-          <div className="cat-card">
-            <img src="/vercel.svg" alt="image" />
-            <h2>Childs</h2>
-          </div>
-          <div className="cat-card">
-            <img src="/vercel.svg" alt="image" />
-            <h2>Winter</h2>
-          </div>
-          <div className="cat-card">
-            <img src="/vercel.svg" alt="image" />
-            <h2>Jeans</h2>
-          </div>
-          <div className="cat-card">
-            <img src="/vercel.svg" alt="image" />
-            <h2>Shirts</h2>
-          </div>
+        <section className="grid flex">
+          {categories.map((cat, i) => (
+          <a href={`category/${cat.slug}`} className="cat-card" key={i}>
+            {cat.image && <img src={cat.image} alt={cat.name} />}
+            <h2>{cat.name}</h2>
+          </a>
+          ))}
         </section>
     )
 }

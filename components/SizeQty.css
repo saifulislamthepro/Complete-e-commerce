@@ -6,7 +6,7 @@
     grid-column: span 6;
     grid-row-start: start;
 }
-.size-quantity{
+.client-container .size-quantity{
     align-items: flex-start;
     gap: 1rem;
     padding: 1rem;
@@ -25,17 +25,19 @@
 }
 .size-quantity .size-container {
     display: flex;
-    gap: 10px;
+    gap: 4px;
+    flex-wrap: wrap;
 }
+
 .stock{
-    background-color: #eee;
-    padding: 10px 20px;
+    background-color: #fff;
+    padding: 4px;
+    text-align: center;
 }
-.size-quantity .size strong{
-    padding: 0.5rem;
-    background-color: #30b179;
+.size-quantity .size-container strong{
+    padding: 8px;
     cursor: pointer;
-    width: 100%;
+    width: fit-content;
 }
 
 .size-quantity .qty {
@@ -47,6 +49,7 @@
     border: 1px solid #ccc;
     padding: 0.5rem;
     cursor: pointer;
+    background-color: #fff;
 }
 
 .size-quantity .stock, .size-quantity .updater, .size-quantity .size-container{

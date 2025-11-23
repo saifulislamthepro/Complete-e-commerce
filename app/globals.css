@@ -24,11 +24,14 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
+.page{
+  min-height: 100vh;
+}
 section{
   max-width: 1200px;
   width: 100%;
   padding: 0 2rem;
+  background-color: #eee;
 }
 
 .flex{
@@ -45,11 +48,18 @@ section{
   grid-template-rows: auto;
 }
 
-.page{
-  margin-top: 60px;
-}
 
 .column{
   flex-direction: column;
   align-items: flex-start;
+}
+
+button{
+  background-color: green;
+  color: white;
+  border: none;
+}
+
+button:hover{
+  background-color: rgb(41, 159, 41);
 }

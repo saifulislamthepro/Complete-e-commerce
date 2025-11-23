@@ -1,6 +1,5 @@
 'use client';
 
-import Profile from "@/components/Profile";
 import MainPage from "./main.tsx/page";
 import "./style.css";
 import { useEffect, useState } from "react";
@@ -23,8 +22,7 @@ export default function AdminDashboardPage() {
     return (
         <div className="admin-dashboard">
             <div className="heading flex">
-                <h1>Admin</h1>
-                <Profile />
+                <h1>Admin Dashboard</h1>
                 <div className="logout"><i className="fa-solid fa-right-from-bracket"></i></div>
             </div>
             <div className="flex">
@@ -47,10 +45,6 @@ export default function AdminDashboardPage() {
                     </div>
                     <div className="notifications">
                         <h2><i className="fa fa-bell" aria-hidden="true"></i>Notifications</h2>
-                        <ul>
-                            <li onClick={() => {setShowContent("notification")}}><i className="fa fa-bell" aria-hidden="true"></i><strong>Robbi Bought Kingfisher Jeans Code R2550 waiting for approval</strong></li>
-                            <li><i className="fa fa-check-circle" aria-hidden="true"></i>zamir Bought Rookies Jeans Code R2530 waiting for approval</li>
-                        </ul>
                     </div>
                 </section>
             </div>

@@ -11,18 +11,18 @@ export default function Footer() {
             <div className="footer-container">
                 { /* <!-- Brand --> */}
                 <div className="footer-section">
-                <h2>SmartGen Digital</h2>
-                <p>Building scalable digital solutions for e-commerce, SaaS, and creative storytelling in Bangladesh and beyond.</p>
+                <h2>Ravaa</h2>
+                <p>Ravaa — A Bangladeshi fashion brand bringing premium quality and everyday style together.</p>
                 </div>
 
                 { /* <!-- Navigation --> */}
                 <div className="footer-section">
                 <h3>Explore</h3>
                 <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="/shop">Shop</a></li>
+                    <li><a href="/new-arrival">New-arrival</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
                 </div>
 
@@ -30,9 +30,8 @@ export default function Footer() {
                 <div className="footer-section">
                 <h3>Contact</h3>
                 <ul>
-                    <li><i className="fas fa-envelope"></i> hello@smartgen.digital</li>
-                    <li><i className="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</li>
-                    <li><i className="fab fa-upwork"></i> Upwork: @smartgen</li>
+                    <li><i className="fas fa-envelope"></i> info@ravaabd.com</li>
+                    <li><i className="fas fa-map-marker-alt"></i> flat: 9A, House: 137/10, SR Plaza, <br />Mazar Road, Mirpur-01, Dhaka-1216, Bangladesh </li>
                 </ul>
                 </div>
 
@@ -40,9 +39,8 @@ export default function Footer() {
                 <div className="footer-section">
                 <h3>Follow Us</h3>
                 <div className="social-icons">
-                    <a href="#"><i className="fab fa-facebook-f"></i></a>
-                    <a href="#"><i className="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i className="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/ravaafashion"><i className="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/ravaafashion"><i className="fab fa-youtube"></i></a>
                 </div>
                 </div>
             </div>
