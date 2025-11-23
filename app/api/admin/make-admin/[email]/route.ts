@@ -1,15 +1,24 @@
-import { connectDB } from "@/lib/db";
+import { NextResponse, NextRequest } from "next/server";
 import User from "@/models/User";
-import { NextRequest, NextResponse } from "next/server";
+import {connectDB} from "@/lib/db";
 
-export async function POST(req: NextRequest, {params}: {params: {email: string}}) {
-    await connectDB();
-    const param = await params;
-    const email = param.email;
+export async function POST(
+  req: NextRequest,
+  { params }: { params: Promise<{ email: string }> }
+) {
+  await connectDB();
 
-    const user = await User.findOneAndUpdate({email: email}, { role: "admin"});
+  // params is now a Promise
+  const { email } = await params;
 
-    await user.save;
+  const user = await User.findOne({ email });
 
-    return NextResponse.json({message: `${user.name} is Now Admin`})
+  if (!user) {
+    return NextResponse.json({ message: "User not found" }, { status: 404 });
+  }
+
+  user.role = "admin";
+  await user.save();
+
+  return NextResponse.json({ message: "User upgraded to admin" });
 }

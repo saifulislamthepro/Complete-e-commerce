@@ -5,7 +5,7 @@ import fs from "fs";
 import path from "path";
 
 // ✅ DELETE a category
-export async function DELETE(_: Request, { params }: { params: { id: string } }) {
+export async function DELETE(_: Request, { params }: { params: Promise<{ id: string }> }) {
   await connectDB();
   const param = await params;
   try {
@@ -27,15 +27,16 @@ export async function DELETE(_: Request, { params }: { params: { id: string } })
 }
 
 // ✅ (Optional) PUT: Update category (change name/image)
-export async function PUT(req: Request, { params }: { params: { id: string } }) {
+export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
   await connectDB();
+  const param = await params;
   try {
     const data = await req.formData();
     const name = data.get("name")?.toString();
     const slug = data.get("slug")?.toString();
     const image = data.get("image") as File | null;
 
-    const category = await Category.findById(params.id);
+    const category = await Category.findById(param.id);
     if (!category) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
     let imagePath = category.image;

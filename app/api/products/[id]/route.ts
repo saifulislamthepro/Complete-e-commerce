@@ -4,7 +4,7 @@ import { connectDB } from "@/lib/db";
 import path from "path";
 import fs from "fs";
 
-export async function GET(req: Request, { params }: { params: { id: string } }) {
+export async function GET(req: Request, { params }: { params: Promise<{ id: string }> }) {
   await connectDB();
   const param = await params;
   const product = await Product.findById(param.id);
@@ -12,7 +12,7 @@ export async function GET(req: Request, { params }: { params: { id: string } }) 
   return NextResponse.json(product);
 }
 
-export async function PUT(req: Request, { params }: { params: { id: string } }) {
+export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
   await connectDB();
 
   const data = await req.formData();
@@ -55,7 +55,7 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
   return NextResponse.json(updated);
 }
 
-export async function DELETE(req: Request, { params }: { params: { id: string } }) {
+export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
   await connectDB();
   const param = await params;
   const product = await Product.findById(param.id);

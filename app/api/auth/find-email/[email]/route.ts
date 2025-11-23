@@ -50,7 +50,7 @@ const htmlTemplate = `
 </html>
 `;
 
-export async function GET(req: NextRequest, {params}: { params: { email: string } }) {
+export async function GET(req: NextRequest, {params}: { params: Promise<{ email: string }> }) {
     await connectDB();
     const param = await params;
 

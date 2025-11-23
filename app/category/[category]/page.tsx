@@ -5,13 +5,12 @@ import './style.css';
 
 
 
-export default async function ({ params }: { params: { category: string }}) {
+export default async function ({ params }: { params: Promise<{ category: string }>}) {
     await connectDB();
     const param = await params;
     const products =JSON.parse(JSON.stringify( await Product.find({category: param.category})));
 
 
-    console.log(products);
     return(
         <div className="category-product-page page">
             <div className="flex">

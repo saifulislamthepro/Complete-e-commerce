@@ -6,7 +6,7 @@ import "./style.css"
 import { title } from "process";
 import ImageGallery from "@/components/ImageGallery";
 
-export default async function Product ({ params }: { params: { id: string } }) {
+export default async function Product ({ params }: { params:Promise< { id: string }> }) {
 const param = await params;
 
 await connectDB()
