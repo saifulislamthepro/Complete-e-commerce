@@ -31,7 +31,7 @@ export default function Footer() {
                 <h3>Contact</h3>
                 <ul>
                     <li><i className="fas fa-envelope"></i> info@ravaabd.com</li>
-                    <li><i className="fas fa-map-marker-alt"></i> flat: 9A, House: 137/10, SR Plaza, <br />Mazar Road, Mirpur-01, Dhaka-1216, Bangladesh </li>
+                    <li><i className="fas fa-map-marker-alt"></i>House: 137/10, SR Plaza, flat: 9A,  <br />Mazar Road, Mirpur-01, Dhaka-1216, Bangladesh </li>
                 </ul>
                 </div>
 

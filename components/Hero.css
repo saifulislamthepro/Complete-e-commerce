@@ -2,7 +2,7 @@
 /* Left text */
 .hero-texts {
     grid-column: span 4;
-    padding-right: 2rem;
+    padding: 2rem;
     text-align: center;
     line-height: 2.5rem;
 }

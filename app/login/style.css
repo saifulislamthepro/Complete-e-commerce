@@ -5,30 +5,26 @@
 }
 
 .login-card{
-    margin: 2rem ;
-    padding: 2rem;
+    margin: 1rem ;
     background-color: #eee;
-    gap: 10px;
+    gap: 5px;
+    max-width: 420px;
+    padding: 10px;
 }
 /* Card */
 .login-card {
-  width: 100%;
-  max-width: 420px;
-  padding: 40px 35px;
-  
-  backdrop-filter: blur(15px);
-  
+  width: 100%;  
+  backdrop-filter: blur(15px);  
   border-radius: 16px;
   border: 1px solid rgba(255,255,255,0.1);
   box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-
   text-align: center;
 }
 
 /* Form */
 .login-form {
   display: grid;
-  gap: 18px;
+  gap: 5px;
 }
 
 /* Input fields */
@@ -36,8 +32,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 15px;
-  
+  padding: 12px 15px;  
   border-radius: 10px;
   border: 1px solid transparent;
   transition: 0.3s ease;

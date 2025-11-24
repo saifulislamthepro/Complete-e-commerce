@@ -6,6 +6,7 @@ import "./globals.css";
 import Navbar from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SessionProvider } from "next-auth/react";
+import WhatsApp from "@/components/WhatsApp";
 
 export default function RootLayout({
   children,
@@ -23,6 +24,7 @@ export default function RootLayout({
       </head>
       <body>        
         <Navbar/>
+        <WhatsApp/>
         {children}
         <Footer/>
       </body>

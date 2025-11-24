@@ -123,16 +123,16 @@
 .contact-section {
   text-align: center;
   padding: 60px 20px;
-  background: #2e7d32;
-  color: #fff;
+  background: Orange;
+  color: #111;
 }
 
 .contact-btn {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 25px;
-  background: green;
-  color: #fff;
+  background: Orange;
+  color: #111;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;

@@ -63,3 +63,25 @@ button{
 button:hover{
   background-color: rgb(41, 159, 41);
 }
+
+.whatsapp-buttun-container button{
+  position: fixed;
+  background:none;
+  left: 70;
+  z-index: 300;
+}
+.whatsapp-buttun-container button i{
+  font-size: 100px;
+  color: green;
+}
+
+@media (max-width: 800px) {
+  .whatsapp-buttun-container button{
+  background:white;
+  left: 0;
+  z-index: 300;
+}
+.whatsapp-buttun-container button i{
+  font-size: 80px;
+}
+}

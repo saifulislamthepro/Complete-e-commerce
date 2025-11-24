@@ -65,7 +65,7 @@ export default function Navbar() {
       <div className="flex">
         <section className="logo-container flex">
           <a href="/">
-            <div  className="logo"> <img src="/logo/Rava-Logo-white-Bg.png" alt="logo" width={200} /></div>
+            <div  className="logo"> <img src="/logo/Rava-Logo-white-Bg.png" alt="logo" /></div>
           </a>
           <div className="search">
             <SearchButton/>
@@ -95,7 +95,7 @@ export default function Navbar() {
               className="dropdown-toggle"
               onClick={() => setDropdownOpen(!dropdownOpen)}
             >
-              <h3><i className="fa-solid fa-bars"></i> Browse Categories </h3>
+              <h3><i className="fa-solid fa-bars"></i> Categories </h3>
               <div className={`dropdown-menu flex column ${dropdownOpen? "dropdown-open": ""}`}>
                 {Categories.map((cat) => (
                   <a
@@ -110,14 +110,18 @@ export default function Navbar() {
               </div>
             </div>
           </div>
-          <div className={openMenu? "links flex active" : "links flex"}>
-            <a href="/"><h3>Home</h3></a>
-            <a href="/new-arrival"><h3>New arrival</h3></a>
-            <a href="/featured"><h3>Featured</h3></a>
-            <a href="/shop"><h3>Shop</h3></a>
-            <a href="/about"><h3>About Us</h3></a>
+          <div className="menu-container flex">
+            <div className={openMenu? "links flex active" : "links flex"}>
+              <a href="/"><h3>Home</h3></a>
+              <a href="/new-arrival"><h3>New arrival</h3></a>
+              <a href="/featured"><h3>Featured</h3></a>
+              <a href="/shop"><h3>Shop</h3></a>
+              <a href="/about"><h3>About Us</h3></a>
+            </div>
+            <div onClick={handleMenuClick} className="menu-bar flex">
+              <i className="fa-solid fa-bars"></i>
+            </div>
           </div>
-          <div onClick={handleMenuClick} className="menu-bar flex"><i className="fa-solid fa-bars"></i></div>
         </nav>
 
       </section>

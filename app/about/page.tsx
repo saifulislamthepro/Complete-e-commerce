@@ -12,7 +12,7 @@ export default function AboutPage() {
                 Ravaa Fashion is a premier clothing brand in Bangladesh, dedicated to bringing
                 style, quality, and comfort to modern fashion enthusiasts.
                 </p>
-                <img src="/images/about-hero.jpg" alt="Ravaa Fashion" className="hero-img"/>
+                <img src="/logo/Rava-Logo-white-Bg.png" alt="Ravaa Fashion" className="hero-img"/>
             </section>
 
             {/* Our Story */}
@@ -26,7 +26,7 @@ export default function AboutPage() {
                 </p>
                 </div>
                 <div className="story-img">
-                <img src="/images/story.jpg" alt="Our Story"/>
+                <img src="/banners/Banner-03.jpg" alt="Our Story"/>
                 </div>
             </section>
 
@@ -56,19 +56,24 @@ export default function AboutPage() {
                 <h2>Meet Our Team</h2>
                 <div className="team-grid">
                 <div className="team-member">
-                    <img src="/images/team1.jpg" alt="Team Member"/>
-                    <h4>Ayesha Rahman</h4>
-                    <p>Founder & CEO</p>
+                    <h4>M. Z. Rayhan</h4>
+                    <p>MD & CEO</p>
                 </div>
                 <div className="team-member">
-                    <img src="/images/team2.jpg" alt="Team Member"/>
-                    <h4>Rafiq Hasan</h4>
-                    <p>Head Designer</p>
+                    <h4>MD. SAIFUL</h4>
+                    <p>IT Manager</p>
                 </div>
                 <div className="team-member">
-                    <img src="/images/team3.jpg" alt="Team Member"/>
-                    <h4>Sumaiya Khan</h4>
-                    <p>Marketing Lead</p>
+                    <h4>ASHA ISLAM</h4>
+                    <p>Marketing Officer</p>
+                </div>
+                <div className="team-member">
+                    <h4>SHANTA ISLAM</h4>
+                    <p>Jr Executive</p>
+                </div>
+                <div className="team-member">
+                    <h4>MD. RATUL</h4>
+                    <p>Jr Graphic Designer</p>
                 </div>
                 </div>
             </section>
