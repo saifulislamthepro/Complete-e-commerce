@@ -1,0 +1,102 @@
+/* PAGE WRAPPER */
+.unauth-page {
+  min-height: 100vh;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* MAIN CARD */
+.unauth-box {
+  background: white;
+  border-radius: 16px;
+  padding: 40px 25px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid #efefef;
+}
+
+/* ICON */
+.unauth-icon {
+  width: 90px;
+  height: 90px;
+  background: #ffe5dd;
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.unauth-icon-inner {
+  width: 55px;
+  height: 55px;
+  background: #ff7d29;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* TITLE */
+.unauth-box h1 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+/* DESCRIPTION */
+.unauth-box p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+/* BUTTONS */
+.unauth-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.home-btn,
+.back-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+/* PRIMARY BUTTON */
+.home-btn {
+  background: #ff7d29;
+  color: white;
+}
+
+.home-btn:hover {
+  background: #e96c1f;
+}
+
+/* OUTLINE BUTTON */
+.back-btn {
+  border: 1px solid #ccc;
+  color: #444;
+  background: white;
+}
+
+.back-btn:hover {
+  background: #f4f4f4;
+}

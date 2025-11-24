@@ -27,10 +27,7 @@ export default function Hero() {
         <section className="grid">
         <div className="hero-texts flex column">
           <h1>Welcome To Ravaa</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta aliquid a
-            minus optio recusandae voluptatem mollitia! Atque quasi, a qui dicta quas
-            quaerat. Odit corporis ut magnam. Earum, provident nobis.
+          <p>A Bangladeshi fashion brand bringing premium quality and everyday style together
           </p>
         </div>
 

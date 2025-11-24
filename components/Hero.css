@@ -3,15 +3,17 @@
 .hero-texts {
     grid-column: span 4;
     padding-right: 2rem;
+    text-align: center;
+    line-height: 2.5rem;
 }
 .hero-texts h1 {
-  font-size: 40px;
-  margin-bottom: 15px;
+  font-size: 48px;
 }
 
 .hero-texts p {
   color: #555;
-  line-height: 1.6;
+  font-size: large;
+  line-height: normal;
 }
 
 /* Right banner slider */
