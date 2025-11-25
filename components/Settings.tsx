@@ -114,8 +114,6 @@ export default function Settings() {
       alert('Error deleting category');
     }
   };
-
-  console.log(categories);
   return (
     <div className='settings'>
       <div className='heading'>

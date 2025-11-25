@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/lib/db";
 import Category from "@/models/Category";
 import fs from "fs";
@@ -12,7 +12,7 @@ export async function GET() {
 }
 
 // ✅ POST: Create category
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   await connectDB();
 
   try {

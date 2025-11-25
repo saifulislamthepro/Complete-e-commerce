@@ -83,9 +83,7 @@ footer{
 .admin-dashboard section .sidebar .profile-component ul{
     border-bottom: 10px solid #ffffff;
 }
-.admin-dashboard section .sidebar .profile-component i{
-    margin-right: 1rem;
-}
+
 .admin-dashboard section .sidebar .profile-component img{
     padding: 1rem;
 }
