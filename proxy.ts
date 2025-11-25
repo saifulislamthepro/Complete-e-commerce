@@ -17,14 +17,13 @@ export async function proxy(req: NextRequest) {
     return NextResponse.redirect(new URL("/login", req.url))
   }
 
-  /*
+  
   // ADMIN PROTECTION
   if (pathname.startsWith("/admin")) {
     if (token.role !== "admin") {
       return NextResponse.redirect(new URL("/unauthorized", req.url))
     }
   }
-*/
   return NextResponse.next()
 } 
 
