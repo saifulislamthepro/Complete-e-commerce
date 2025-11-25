@@ -65,14 +65,25 @@ export const authOptions: NextAuthOptions = {
     },
 
     async jwt({ token, user }) {
-      if (user) {
-        token.id = user.id;
-        token.email = user.email;
-        token.image = user.image;
-        token.role = user.role;
+    await connectDB();
+
+    // On first login, attach user info
+    if (user) {
+      token.id = user.id;
+      token.email = user.email;
+      token.image = user.image;
+      token.role = user.role;
+    } else {
+      // On subsequent requests, refresh role from DB
+      const dbUser = await User.findOne({ email: token.email });
+      if (dbUser) {
+        token.role = dbUser.role;
       }
-      return token;
-    },
+    }
+
+    return token;
+  },
+
 
     async session({ session, token }) {
       session.user.id = token.id;
