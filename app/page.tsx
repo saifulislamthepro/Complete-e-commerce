@@ -1,6 +1,6 @@
 "use server"
-export const dynamic = "force-dynamic";
 
+import "./style.css";
 import { connectDB } from "@/lib/db";
 import Product from "@/models/Product";
 import Category from "@/models/Category";
@@ -13,7 +13,6 @@ import Products from "@/components/Products";
 import { ProductType } from "@/types/product";
 import { CategoryType } from "@/types/category";
 
-import "./style.css";
 import CatProductSlider from "@/components/CatProducts";
 
 export default async function Home() {
