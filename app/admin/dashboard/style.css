@@ -4,7 +4,9 @@
 footer{
     display: none;
 }
-
+.whatsapp-buttun-container{
+    display: none;
+}
 .admin-dashboard>.heading {
     height: fit-content;
     background-color: #eee;
