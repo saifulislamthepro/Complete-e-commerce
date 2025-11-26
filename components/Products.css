@@ -72,13 +72,16 @@
 }
 
 /* MOBILE GRID */
+.mobile-grid{
+  padding: 1rem;
+}
 .mobile-product {
   border: 1px solid #eee;
   border-radius: 6px;
   padding: 1rem;
   background: #fff;
   grid-column: span 6;
-  height: 300px;
+  height: 250px;
 }
 
 .mobile-product .img {
@@ -99,7 +102,7 @@
   font-weight: 600;
 }
 .web-grid{
-  padding: 1rem 0;
+  padding: 1rem;
 }
 .web-grid .web-product{
   grid-column: span 3;
