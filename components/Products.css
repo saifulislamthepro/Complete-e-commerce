@@ -36,7 +36,7 @@
   box-shadow: 0 4px 14px rgba(0,0,0,0.12);
   transition: 0.3s;
   position: relative;
-  height: 350px;
+  height: fit-content;
 }
 
 .product-card:hover {
