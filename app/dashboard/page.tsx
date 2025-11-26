@@ -69,7 +69,7 @@ export default async function DashboardPage() {
               <ul>
                 <li><strong>Name: </strong>{session?.user.name}</li>
                 <li><strong>Email: </strong>{session?.user.email}</li>
-                <li><strong>Email: </strong>{session?.user.role}</li>
+                <li><strong>Role: </strong>{session?.user.role}</li>
               </ul>
             </div>
               <h2>Account Settings</h2>
@@ -96,6 +96,7 @@ export default async function DashboardPage() {
                       </li>
                     ))}
                   </section>
+                    <p><strong>Ordered At: {o.createdAt.toDateString()}</strong></p>
                   <h2>Status: {o.status.toLocaleUpperCase()} - <strong>Total: {o.total.toString()}</strong> /BDT</h2>
                 </div>
               ))}
