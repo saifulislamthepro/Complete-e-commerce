@@ -1,12 +1,12 @@
 import { connectDB } from "@/lib/db";
 import Product from "@/models/Product";
 import "../new-arrival/style.css";
+import Image from "next/image";
 
 export default async function ProductList() {
     await connectDB();
     const products = JSON.parse(JSON.stringify(await Product.find().lean()));
 
-    console.log(products)
     return (
         <div className="products-container">
             <div className="flex">
@@ -14,7 +14,9 @@ export default async function ProductList() {
                     {products.map((p: any) => (
                         <a href={`/product/${p._id}`} key={p._id} className="product-card">
                             <div className="img-box">
-                                <img src={p.images[0]} alt={p.title} />
+                                <div className="img">
+                                    <Image fill src={p.images[0]} alt={p.title} />
+                                </div>
                             </div>
 
                             <div className="details">
