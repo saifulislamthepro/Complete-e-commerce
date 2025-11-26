@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import "./Hero.css";
 
 const banners = [
@@ -32,7 +33,7 @@ export default function Hero() {
         </div>
 
         <div className="hero-banner">
-          <img key={index} src={banners[index]} className="banner-img" alt="banner" />
+          <Image key={index} src={banners[index]} className="banner-img" alt="banner" fill style={{marginTop: "2rem"}} />
         </div>
         </section>
       </div>

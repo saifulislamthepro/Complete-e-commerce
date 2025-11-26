@@ -33,9 +33,10 @@
   cursor: pointer;
   text-decoration: none;
   color: #000;
-
   box-shadow: 0 4px 14px rgba(0,0,0,0.12);
   transition: 0.3s;
+  position: relative;
+  height: 350px;
 }
 
 .product-card:hover {
@@ -77,16 +78,17 @@
 .mobile-product {
   border: 1px solid #eee;
   border-radius: 6px;
-  padding: 10px;
+  padding: 1rem;
   background: #fff;
   grid-column: span 6;
+  height: 300px;
 }
 
-.mobile-product img {
+.mobile-product .img {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
+  height: 80%;
   border-radius: 4px;
+  position: relative;
 }
 
 .mobile-product h4 {
@@ -104,8 +106,10 @@
 }
 .web-grid .web-product{
   grid-column: span 3;
+  height: 300px;
+  width: 250px;
 }
-
-.web-grid .web-product img{
-  width: 100%;
+.web-grid .web-product .img{
+  position: relative;
+  height: 90%;
 }

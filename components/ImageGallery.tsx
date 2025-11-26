@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 import "./ImageGallery.css";
 
 type Props = {
@@ -44,7 +45,8 @@ export default function ImageGallery({ images }: Props) {
       >
         <button onClick={prevImage} className="nav-btn left">❮</button>
 
-        <img
+        <Image
+          fill
           ref={imageRef}
           src={images[activeIndex]}
           alt="product"

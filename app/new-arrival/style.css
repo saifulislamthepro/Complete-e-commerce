@@ -67,3 +67,9 @@
 .view-btn:hover {
     background: #ff8a00;
 }
+
+@media (max-width: 800px) {
+    .product-card{
+        grid-column: span 6;
+    }
+}

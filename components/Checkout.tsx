@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 import { useEffect, useState } from "react";
 import { getCart, saveCart } from "@/components/cartHelpers";
 import { useSession, signIn } from "next-auth/react";
+import { usePathname, useSearchParams } from "next/navigation";
 
 type CartItem = {
   productId: string;
@@ -27,14 +28,34 @@ export default function CheckoutCartPage() {
   const [address, setAddress] = useState("");
   const [notes, setNotes] = useState("");
   const [shippingZone, setShippingZone] = useState<"inside" | "outside">("inside");
+    const [paymentMethod, setPaymentMethod] = useState("");
 
   const session = useSession();
+  const searchParams = useSearchParams();
+  const pathName = usePathname();
 
   useEffect(() => {
     setMounted(true);
     const items = getCart();
     setCart(items);
     setLoading(false);
+
+    const saved = localStorage.getItem("checkoutForm");
+    if (saved) {
+        const data = JSON.parse(saved);
+
+        setFirstName(data.firstName || "");
+        setLastName(data.lastName || "");
+        setPhone(data.phone || "");
+        setEmail(data.email || "");
+        setAddress(data.address || "");
+        setNotes(data.notes || "");
+        setShippingZone(data.shippingZone || "inside");
+        setPaymentMethod(data.paymentMethod || "");
+
+        // Clear saved data
+        localStorage.removeItem("checkoutForm");
+    }
   }, []);
 
   if (!mounted || loading) return null;
@@ -43,16 +64,31 @@ export default function CheckoutCartPage() {
   const subtotal = cart.reduce((s, it) => s + it.price * it.qty, 0);
   const total = subtotal + shippingCost;
 
+  const currentUrl = `${pathName}?${searchParams.toString()}`;
+
   const handlePlaceOrder = async (e: React.FormEvent) => {
+    e.preventDefault();
 
         // ⛔ If user is NOT logged in → redirect to login
     if (!session.data) {
+    // Save form data before redirect
+    const formData = {
+        firstName,
+        lastName,
+        phone,
+        email,
+        address,
+        notes,
+        shippingZone,
+        paymentMethod,
+    };
+
+    localStorage.setItem("checkoutForm", JSON.stringify(formData));
         return signIn(undefined, {
-            callbackUrl: window.location.href, // return back to checkout
+            callbackUrl: currentUrl, // return back to checkout
         });
     }
 
-    e.preventDefault();
     const res = await fetch("/api/orders", {
       method: "POST",
       body: JSON.stringify({
@@ -75,11 +111,17 @@ export default function CheckoutCartPage() {
     address,
     notes,
     shippingZone,
-    userId: session.data.user.id
+    userId: session.data.user.id,
+    paymentMethod,
     }),
   });
 
-  const data = await res.json();
+    if (res.ok) {
+        alert("Order placed successfully!");
+        window.location.href = "/dashboard";
+    } else {
+        alert("Order failed!");
+    }
 };
 
   return (
@@ -212,8 +254,8 @@ export default function CheckoutCartPage() {
               <strong>৳{total}</strong>
             </div>
 
-            <div className="cod">
-              <input type="checkbox" name="cod" /> <span> Cash On Delivery</span>
+            <div className="cod flex">
+                <input type="checkbox" name="COD" value={paymentMethod} onChange={()=> setPaymentMethod("Cash On Delivery")} required/> <span>Cash On Delivery</span>
             </div>
 
             <div className="ssl">

@@ -17,12 +17,13 @@
     width: 100%;
 }
 .cat-card{
+    margin-top: 2rem;
     grid-column: span 2;
     text-align: center;
 }
 
 .cat-card img{
-    width: 100%;
+    width:100% ;
 }
 
 @media (max-width: 800px) {
@@ -33,15 +34,10 @@
     scrollbar-width: auto;
     overflow-x: scroll;
 }
-
-
 .cat-card{
     width: 200px;
-    text-align: center;
 }
-.cat-card img{
-    width: 60px;
-}
+
 }
 /*--------Featured-----------*/
 
@@ -67,7 +63,7 @@
 @media (max-width: 800px) {
     .cat-container section .texts{
   grid-column: span 12;
-  padding: 2rem;
+  padding: 4rem;
 }
 .cat-container section .cat-product{
   grid-column: span 12;

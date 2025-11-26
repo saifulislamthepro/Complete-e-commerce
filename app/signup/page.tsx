@@ -1,115 +1,16 @@
-"use client";
+"use client"
+export const dynamic = "force-dynamic";
 
-import { useState, useEffect } from "react";
-import { signIn } from "next-auth/react";
+import { Suspense } from "react";
+import SignupPage from "@/components/SignUp";
 import "../login/style.css";
 
-export default function SignupPage() {
-  const [mounted, setMounted] = useState(false);
+export default function Page () {
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errorMsg, setErrorMsg] = useState("");
-
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
-
-  const signup = async (e: any) => {
-    e.preventDefault();
-    setErrorMsg("");
-
-    // SEND DATA TO BACKEND API
-    const res = await fetch("/api/auth/signup", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, password }),
-    });
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      setErrorMsg(data.message || "Something went wrong");
-      return;
-    }
-
-    // AUTO LOGIN USER
-    await signIn("credentials", {
-      email,
-      password,
-      callbackUrl: "/dashboard",
-    });
-  };
-
-  return (
-    <div className="login page login-page">
-      <div className="flex">
-        <div className="login-card">
-          <h1>Create Account</h1>
-          <p className="subtitle">Signup to get started</p>
-
-          {errorMsg && <p className="error-msg">{errorMsg}</p>}
-
-          <form onSubmit={signup} className="login-form">
-            <div className="input-group">
-              <i className="fa-solid fa-user"></i>
-              <input
-                type="text"
-                placeholder="Full Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-            </div>
-
-            <div className="input-group">
-              <i className="fa-solid fa-envelope"></i>
-              <input
-                type="email"
-                placeholder="Email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-
-            <div className="input-group">
-              <i className="fa-solid fa-lock"></i>
-              <input
-                type="password"
-                placeholder="Create password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-
-            <button className="login-btn" type="submit">
-              Create Account
-            </button>
-
-            <div className="or">
-              <span></span> OR <span></span>
-            </div>
-
-            <button
-              type="button"
-              className="google-btn"
-              onClick={() =>
-                signIn("google", { callbackUrl: "/dashboard" })
-              }
-            >
-              <i className="fa-brands fa-google"></i>
-              Sign in with Google
-            </button>
-
-            <p>
-              Already have an account?{" "}
-              <a href="/login">Login here</a>
-            </p>
-          </form>
-        </div>
-      </div>
-    </div>
-  );
+  
+    return (
+      <Suspense fallback={<div>Loading...</div>}>
+        <SignupPage/>
+      </Suspense>
+    );
 }

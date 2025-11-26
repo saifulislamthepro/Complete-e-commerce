@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import './AdminProducts.css';
 import { useEffect, useState } from "react";
+import Image from 'next/image';
 
 type Size = {
   name: string;
@@ -86,11 +87,9 @@ export default function AdminProducts() {
             <p>Category: {p.category}</p>
 
             <div className="product-images">
-                <img
-                  src={p.images[0]}
-                  alt={`image-${p.title}-`}
-                  className="product-thumbnail"
-                />
+                <Image 
+                  className="product-thumbnail" src={p.images[0]} alt={p.title}>
+                </Image>                
             </div>
 
             <div className="stock-info">

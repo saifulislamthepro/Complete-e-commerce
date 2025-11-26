@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { ProductType } from "@/types/product";
+import Image from "next/image";
 import "./Products.css";
 
 type Props = {
@@ -43,7 +44,9 @@ useEffect(() => {
       <div className="mobile-grid grid">
         {products.map((item) => (
           <a className="mobile-product" key={item._id} href={`/product/${item._id}`}>
-            <img src={item.images[0]} alt={item.title} />
+            <div className="img">
+            <Image src={item.images[0]} alt={item.title} fill/>
+            </div>
             <h4>{item.title}</h4>
             <p>{item.price} টাকা</p>
           </a>
@@ -58,7 +61,9 @@ if (products.length < 4) {
         <div className="web-grid grid">
           {products.map((item) => (
             <a className="web-product" key={item._id} href={`/product/${item._id}`}>
-              <img src={item.images[0]} alt={item.title} />
+            <div className="img">
+            <Image src={item.images[0]} alt={item.title} fill/>
+            </div>
               <h4>{item.title}</h4>
               <p>{item.price} টাকা</p>
             </a>
@@ -80,7 +85,7 @@ if (products.length < 4) {
                     {products.map((item) => (
                         <a className="product-card" href={`/product/${item._id}`} key={item._id}>
                         <div className="img-box">
-                            <img src={item.images[0]} alt={item.title} />
+                            <Image fill src={item.images[0]} alt={item.title} />
                         </div>
                         <h3>{item.title}</h3>
                         <p>{item.price} টাকা</p>

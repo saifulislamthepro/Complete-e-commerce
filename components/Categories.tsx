@@ -1,6 +1,7 @@
 'use client'
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
 
 type Categories = {
@@ -32,7 +33,8 @@ export default function Categories () {
         <section className="grid flex">
           {categories.map((cat, i) => (
           <a href={`category/${cat.slug}`} className="cat-card" key={i}>
-            {cat.image && <img src={cat.image} alt={cat.name} />}
+            {cat.image && 
+            <img className="img" src={cat.image} alt={cat.name} />}
             <h2>{cat.name}</h2>
           </a>
           ))}

@@ -20,6 +20,9 @@
 .hero-banner {
     grid-column: span 8;
     padding: 1rem 0;
+    position: relative;
+    height: 400px;
+    width: 100%;
 }
 
 .banner-img {

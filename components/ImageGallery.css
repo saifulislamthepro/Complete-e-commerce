@@ -2,17 +2,10 @@
 .main-image-wrapper {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 600px;
   overflow: hidden;
 }
 
-/* Main image */
-.main-image {
-  width: 100%;
-  height: auto;
-  transition: transform 0.2s ease-out;
-  cursor: zoom-in;
-}
 
 /* Zoom active */
 .zoom-active {
@@ -67,4 +60,10 @@
 .thumb:hover {
   opacity: 1;
   border: 2px solid orange;
+}
+
+@media (max-width: 800px) {
+  .main-image-wrapper {
+    height: 400px;
+}
 }

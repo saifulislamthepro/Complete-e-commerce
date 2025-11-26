@@ -11,6 +11,7 @@ export default function LoginPage() {
   const [errorMsg, setErrorMsg] = useState("");
 
   const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl") || "/dashboard";
   const urlError = searchParams.get("error");
 
   // Handle OAuth errors (Google login fail)
@@ -30,7 +31,8 @@ export default function LoginPage() {
     const res = await signIn("credentials", {
       email,
       password,
-      redirect: false, // IMPORTANT
+      redirect: false,
+      callbackUrl // IMPORTANT
     });
 
     if (res?.error) {
@@ -38,7 +40,7 @@ export default function LoginPage() {
       return;
     }
 
-    window.location.href = "/dashboard";
+    window.location.href = callbackUrl;
   };
 
   useEffect(() => {
@@ -96,7 +98,7 @@ export default function LoginPage() {
               type="button"
               className="google-btn"
               onClick={() =>
-                signIn("google", { callbackUrl: "/dashboard" })
+                signIn("google", { callbackUrl: callbackUrl })
               }
             >
               <i className="fa-brands fa-google"></i>
@@ -104,7 +106,7 @@ export default function LoginPage() {
             </button>
 
             <p>
-              Don't have an account? <a href="/signup">Create account</a>
+              Don't have an account? <a href={`/signup?callbackUrl=${callbackUrl}`}>Create account</a>
             </p>
           </form>
         </div>

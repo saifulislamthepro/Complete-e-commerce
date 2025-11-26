@@ -43,11 +43,30 @@ export default function CheckoutPage() {
         setProduct(data);
     };
 
-    useEffect(() => {
-        setMounted(true);
-        fetchProduct();
-    }, []);
+useEffect(() => {
+    setMounted(true);
+    fetchProduct();
 
+    const saved = localStorage.getItem("checkoutForm");
+    if (saved) {
+        const data = JSON.parse(saved);
+
+        setFirstName(data.firstName || "");
+        setLastName(data.lastName || "");
+        setPhone(data.phone || "");
+        setEmail(data.email || "");
+        setAddress(data.address || "");
+        setNotes(data.notes || "");
+        setShippingZone(data.shippingZone || "inside");
+        setPaymentMethod(data.paymentMethod || "");
+
+        // Clear saved data
+        localStorage.removeItem("checkoutForm");
+    }
+}, []);
+
+
+    
     if (!mounted) return null;
 
     const subtotal = product ? product.price * qty : 0;
@@ -58,11 +77,25 @@ export default function CheckoutPage() {
     e.preventDefault();
 
     // ⛔ If user is NOT logged in → redirect to login
+
     if (!session.data) {
+    // Save form data before redirect
+    const formData = {
+        firstName,
+        lastName,
+        phone,
+        email,
+        address,
+        notes,
+        shippingZone,
+        paymentMethod,
+    };
+
+    localStorage.setItem("checkoutForm", JSON.stringify(formData));
         return signIn(undefined, {
             callbackUrl: window.location.href, // return back to checkout
         });
-    }
+    } 
 
     if (!product) return alert("Product not loaded");
 
@@ -90,7 +123,7 @@ export default function CheckoutPage() {
         notes,
         shippingZone,
         paymentMethod,
-        userId: session.data.user.id
+        userId: session.data?.user.id
     };
 
     const res = await fetch("/api/orders", {
