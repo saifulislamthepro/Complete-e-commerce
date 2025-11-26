@@ -47,13 +47,14 @@
 /* Image Box */
 .img-box {
   width: 100%;
-  height: 180px;
+  height: 200px;
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 12px;
 }
 
-.img-box img {
+.img-box .img {
+  position: relative;
   width: 100%;
   height: 100%;
   object-fit: cover;
