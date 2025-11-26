@@ -47,7 +47,6 @@
 /*--------cetagory-product-------*/ 
 .cat-container section .texts{
   grid-column: span 3;
-  padding: 2rem;
   justify-content: center;
   align-items: center;
 }
@@ -55,20 +54,14 @@
  font-size: 24px;
 }
 .cat-container section .texts img{
-  width: 100%;
+  width: 50%;
 }
 .cat-container section .cat-product{
   grid-column: span 9;
 }
 @media (max-width: 800px) {
-    .cat-container section .texts{
-  grid-column: span 12;
-  padding: 4rem;
-}
-.cat-container section .cat-product{
-  grid-column: span 12;
-  margin: 0;
-  padding: 0;
+    .cat-container section {
+  display: block;
 }
 }
 

@@ -48,10 +48,12 @@ export default async function Home() {
           return (
             <section className="grid" key={cat.slug}>
               {/* LEFT SIDE */}
-              <div className="texts flex column">
-                {cat.image && <img src={cat.image} alt={cat.slug} />}
-                <h3>{cat.name}</h3>
-              </div>
+               <a href={`category/${cat.slug}`}>
+                <div className="texts flex column">
+                  {cat.image &&<img src={cat.image} alt={cat.slug}/>}
+                  <h1>{cat.name}</h1>
+                </div>
+              </a>
 
               {/* RIGHT SIDE — pass full filtered array ONCE */}
               <div className="cat-product">

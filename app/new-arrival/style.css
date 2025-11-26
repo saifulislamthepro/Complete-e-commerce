@@ -10,6 +10,7 @@
     color: #000;
     transition: 0.3s ease;
     grid-column: span 3;
+    height: fit-content;
 }
 
 .product-card:hover {
@@ -20,12 +21,12 @@
 
 .img-box {
     width: 100%;
-    height: 300px;
     background: #eee;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    height: 300px;
 }
 
 .img-box .img {
@@ -71,5 +72,9 @@
 @media (max-width: 800px) {
     .product-card{
         grid-column: span 6;
+        height: fit-content;
+    }
+    .img-box{
+        height: 250px;
     }
 }
