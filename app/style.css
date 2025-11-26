@@ -67,6 +67,8 @@
 }
 .cat-container section .cat-product{
   grid-column: span 12;
+  margin: 0;
+  padding: 0;
 }
 }
 
