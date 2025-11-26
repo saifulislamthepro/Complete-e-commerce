@@ -86,7 +86,9 @@ useEffect(() => {
                     {products.map((item) => (
                         <a className="product-card" href={`/product/${item._id}`} key={item._id}>
                         <div className="img-box">
-                            <Image src={item.images[0]} alt={item.title} fill/>
+                            <div className="img">
+                                <Image fill src={item.images[0]} alt={item.title}/>
+                            </div>
                         </div>
                         <h3>{item.title}</h3>
                         <p>{item.price} টাকা</p>
