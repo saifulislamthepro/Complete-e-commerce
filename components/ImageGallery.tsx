@@ -50,6 +50,7 @@ export default function ImageGallery({ images }: Props) {
           ref={imageRef}
           src={images[activeIndex]}
           alt="product"
+          loading="lazy"
           className={`main-image ${zoom ? "zoom-active" : ""}`}
           style={
             zoom

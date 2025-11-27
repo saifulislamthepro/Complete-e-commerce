@@ -45,7 +45,7 @@ useEffect(() => {
         {products.map((item) => (
           <a className="mobile-product" key={item._id} href={`/product/${item._id}`}>
             <div className="img">
-            <Image src={item.images[0]} alt={item.title} fill/>
+            <Image src={item.images[0]} alt={item.title} fill loading="lazy"/>
             </div>
             <h4>{item.title}</h4>
             <p>{item.price} টাকা</p>
@@ -62,7 +62,7 @@ if (products.length < 4) {
           {products.map((item) => (
             <a className="web-product" key={item._id} href={`/product/${item._id}`}>
             <div className="img">
-            <Image src={item.images[0]} alt={item.title} fill/>
+            <Image src={item.images[0]} alt={item.title} fill loading="lazy"/>
             </div>
               <h4>{item.title}</h4>
               <p>{item.price} টাকা</p>
@@ -86,7 +86,7 @@ if (products.length < 4) {
                         <a className="product-card" href={`/product/${item._id}`} key={item._id}>
                         <div className="img-box">
                           <div className="img">
-                            <Image fill src={item.images[0]} alt={item.title}/>
+                            <Image fill src={item.images[0]} alt={item.title} loading="lazy"/>
                           </div>
                         </div>
                         <h3>{item.title}</h3>

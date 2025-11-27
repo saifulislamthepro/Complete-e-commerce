@@ -28,13 +28,13 @@ export default function Hero() {
         <section className="grid">
         <div className="hero-texts flex column">
           <div className="img">
-          <Image src={'/banners/Banner-short.png'} alt="banner-short" fill/>
+          <Image src={'/banners/Banner-short.png'} alt="banner-short" fill loading="lazy"/>
           </div>
         </div>
 
         <div className="hero-banner">
           <div className="img">
-          <Image key={index} src={banners[index]} className="banner-img" alt="banner" fill />
+          <Image key={index} src={banners[index]} className="banner-img" alt="banner" fill loading="lazy"/>
           </div>
         </div>
         </section>
