@@ -51,9 +51,12 @@ header .navbar-container nav{
 .dropdown{
   grid-column: span 4;
   background-color: orange;
+  order: 10;
 }
 .dropdown h3{
-  padding: 2rem;
+  text-align: right;
+  padding: 15px 2rem;
+  font-size: 24px;
 }
 .dropdown-toggle{
   position: relative;
@@ -148,7 +151,7 @@ header nav .links h3:hover::after{
     flex-direction: column;
     right: 0;
     background-color: #333;
-    top: 85;
+    top: 100%;
     width: 100%;
     align-items: flex-end;
     z-index: 100;
@@ -169,6 +172,9 @@ header nav .links h3:hover::after{
   }
   .navbar-container .menu-bar i{
     font-size: 24px;
+    width: 100%;
+    text-align: left;
+    padding-left: 2rem;
   }
   header nav .menu-container{
   grid-column: span 6;

@@ -95,7 +95,7 @@ export default function Navbar() {
               className="dropdown-toggle"
               onClick={() => setDropdownOpen(!dropdownOpen)}
             >
-              <h3><i className="fa-solid fa-bars"></i> Categories </h3>
+              <h3>Categories <i className="fa-solid fa-bars"></i> </h3>
               <div className={`dropdown-menu flex column ${dropdownOpen? "dropdown-open": ""}`}>
                 {Categories.map((cat) => (
                   <a

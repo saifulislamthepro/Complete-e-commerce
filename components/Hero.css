@@ -5,6 +5,7 @@
     padding: 2rem;
     text-align: center;
     line-height: 2.5rem;
+    order: 10;
 }
 .hero-texts h1 {
   font-size: 48px;

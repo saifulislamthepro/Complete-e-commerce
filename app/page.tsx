@@ -48,8 +48,8 @@ export default async function Home() {
           return (
             <section className="grid" key={cat.slug}>
               {/* LEFT SIDE */}
-               <a href={`category/${cat.slug}`}>
-                <div className="texts flex column">
+               <a className="texts" href={`category/${cat.slug}`}>
+                <div className="flex ">
                   {cat.image &&<img src={cat.image} alt={cat.slug}/>}
                   <h1>{cat.name}</h1>
                 </div>
