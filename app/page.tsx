@@ -14,9 +14,10 @@ import Products from "@/components/Products";
 import { ProductType } from "@/types/product";
 import { CategoryType } from "@/types/category";
 
+
 const CatProductSlider = dynamic(()=> import("@/components/CatProducts"), {
   loading: () => <p>Loading...</p>,
-  ssr: false
+  ssr: true
 })
 export default async function Home() {
   await connectDB();
@@ -26,6 +27,10 @@ export default async function Home() {
 
   return (
     <div className="page">
+      <head>
+        <title>Ravaa fashion</title>
+        <meta name="description" content="Ravaa fashion is the fastest growing brand in Bangladesh" />
+      </head>
       <div className="hero flex">
         <Hero />
       </div>

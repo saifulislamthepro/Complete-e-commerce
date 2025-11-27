@@ -8,10 +8,7 @@ import Footer from "@/components/Footer";
 import { SessionProvider } from "next-auth/react";
 import WhatsApp from "@/components/WhatsApp";
 
-export const metadata = {
-  title: "Ravaa",
-  description: "ravaa fashion a top tier fashion brand located in Dhaka bangladesh",
-};
+
 
 export default function RootLayout({
   children,
