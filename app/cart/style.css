@@ -13,27 +13,15 @@
     padding: 1rem;
     gap: 1rem;
 }
-.card-conatiner {
-    gap: 5px;
-}
 .cart-card{
-background-color: #eee;
+background-color: #fff;
+border-radius: 1rem;
 width: 300px;
-align-items: center;
-padding: 2rem;
-border: 1px solid #555;
+text-align: center;
+gap: 0;
+padding: 1rem 0;
 }
 
-.cart-card .title{
-    grid-column: span 12;
-}
-.cart-card .img-container{
-    grid-column: span 6;
-}
-
-.cart-card .image img{
-    width: 100%;
-}
 .cart-card .functions{
     grid-column: span 6;
 }
@@ -53,9 +41,6 @@ border: 1px solid #555;
     padding:  4px 10px;
 }
 
-.cart-card div{
-    margin-bottom: 10px;
-}
 
 .total{
     margin-top: 1rem;
@@ -69,4 +54,7 @@ border: 1px solid #555;
 .total a button{
     padding: 10px 1rem;
     margin: 10px;
+}
+.cart a button{
+    padding: 10px 1rem;
 }

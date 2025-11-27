@@ -58,7 +58,7 @@ export default function Navbar() {
     <header className="navbar">
       <div className="top-bar flex">
         <section className="flex">
-          <div className="phone"><i className="fa-solid fa-phone"></i>+88 01647895544</div>
+          <div className="phone"><i className="fa-solid fa-phone"></i>+8801901929592, +8801901929593</div>
           <div className="login"><a href="/login"><p>SignUp/Login</p></a></div>
         </section>
       </div>
@@ -104,7 +104,7 @@ export default function Navbar() {
                     className="dropdown-item flex"
                   >
                     <img src={cat.image} alt={cat.slug} width={30}/>
-                    <strong>{cat.name}</strong>
+                    <h3>{cat.name}</h3>
                   </a>
                 ))}
               </div>

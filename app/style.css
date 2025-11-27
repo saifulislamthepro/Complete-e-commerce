@@ -48,6 +48,9 @@
 .cat-container section .texts{
   grid-column: span 3;
 }
+.cat-container section .texts>div{
+  padding: 1rem;
+}
 .cat-container section .texts h3{
  font-size: 24px;
 }

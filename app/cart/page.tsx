@@ -66,22 +66,13 @@ const handleDelete = (id: string, size: Size) => {
             <div className="flex card-conatiner">
 
             { cart.map((item, i) => (
-                <div key={i} className="cart-card grid"> 
+                <div key={i} className="cart-card"> 
                 <i className="fa-solid fa-circle-xmark" onClick={() => handleDelete(item.productId, item.size)}></i>
                       <div className="title">
-                        <strong>{item.title}</strong>
+                        <strong>{item.title} /Size: {item.size.name}</strong>
                       </div>
-
-                    <div className="img-container">
-                      <div className="image">
-                        <img src={item.images[0]} alt={item.productId} width={70} />
-                      </div>
-                    </div>
-
                   {/* Quantity Control */}
-                  <div className="functions">
-                    <p>Size: {item.size.name}</p>                  
-                    <label>Qty: </label>
+                  <div className="functions flex">          
                     <div className="qty-control flex">
                       <button onClick={() => decrease(i)}>-</button>
                       <strong>{item.qty}</strong>
@@ -101,7 +92,7 @@ const handleDelete = (id: string, size: Size) => {
               </div>             
             </div> 
             <a className="flex">
-              <button onClick={clearCart}>Clear cart</button>
+              <button onClick={clearCart}><i className="fa-solid fa-circle-xmark"></i>Clear cart</button>
             </a>    
         </section>
       </div>

@@ -53,33 +53,38 @@ section{
 }
 
 button{
-  background-color: green;
+  background-color: orange;
   color: white;
   border: none;
+  border-radius: 5px;
 }
 
 button:hover{
-  background-color: rgb(41, 159, 41);
+  background-color: orangered;
 }
-
-.whatsapp-buttun-container button{
+.whatsapp-buttun-container{
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: green;
   position: fixed;
-  background:none;
-  left: 70;
-  z-index: 300;
+  left: 50px;
+  z-index: 2000;
+}
+.whatsapp-buttun-container button{
+  background: none;
 }
 .whatsapp-buttun-container button i{
-  font-size: 100px;
-  color: green;
+  font-size: 60px;
+  color: rgb(255, 255, 255);
 }
 
 @media (max-width: 800px) {
-  .whatsapp-buttun-container button{
-  background:white;
-  left: 0;
-  z-index: 300;
+  .whatsapp-buttun-container{
+    z-index: 200;
+  left:20;
 }
 .whatsapp-buttun-container button i{
-  font-size: 80px;
+  font-size: 60px;
 }
 }

@@ -5,7 +5,7 @@ import Image from "next/image";
 import "./Hero.css";
 
 const banners = [
-  "/banners/Banner-01.jpg",
+  "/banners/Banner-01.png",
   "/banners/Banner-02.jpg",
   "/banners/Banner-04.jpg"
 ];
@@ -27,13 +27,15 @@ export default function Hero() {
       <div className="flex">
         <section className="grid">
         <div className="hero-texts flex column">
-          <h1>Welcome To Ravaa</h1>
-          <p>A Bangladeshi fashion brand bringing premium quality and everyday style together
-          </p>
+          <div className="img">
+          <Image src={'/banners/Banner-short.png'} alt="banner-short" fill/>
+          </div>
         </div>
 
         <div className="hero-banner">
-          <Image key={index} src={banners[index]} className="banner-img" alt="banner" fill style={{marginTop: "2rem"}} />
+          <div className="img">
+          <Image key={index} src={banners[index]} className="banner-img" alt="banner" fill />
+          </div>
         </div>
         </section>
       </div>
