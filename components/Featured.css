@@ -1,0 +1,10 @@
+
+
+
+.img-container{
+    grid-column: span 6;
+}
+
+.img-container img{
+    width: 380px;
+}

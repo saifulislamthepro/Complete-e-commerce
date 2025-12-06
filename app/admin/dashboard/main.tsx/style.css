@@ -1,0 +1,33 @@
+.main-page{
+    padding: 1rem;
+}
+
+/*-----overview------*/
+.overview{
+    gap: 10px;
+}
+.overview .heading{
+    min-width: 100%;
+    border-radius: none;
+    padding-left: 1rem;
+    margin-top: 1rem;
+}
+.overview .card{
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    width: 24%;
+    text-align: center;
+}
+.overview .card i{
+    margin: 0;
+}
+hr{
+    width: 100%;
+    border: 2px solid #ffffff;
+}

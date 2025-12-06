@@ -1,0 +1,106 @@
+
+.checkout section{
+    margin-bottom: 2rem;
+}
+.page-title {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    font-size: larger;
+    background-color: #eee;
+    margin-bottom: 2rem;
+}
+.checkout form, .checkout .order-summary {
+    grid-column: span 6;
+    background-color: #eee;
+    padding: 1rem;
+}
+
+.checkout form h2{
+    grid-column: span 12;
+    text-align: left;
+}
+.checkout form div {
+    grid-column: span 6;
+}
+
+.checkout form div label{
+    display: block;
+}
+
+.checkout form .address, .checkout .notes{
+    grid-column: span 12;
+}
+
+.checkout form textarea{
+    width: 100%;
+    padding: 1rem;
+}
+.checkout form input{
+    width: 100%;
+    height: 40px;
+    padding: 1rem;
+}
+.checkout select{
+    padding: 0.7rem 0;
+    width: 100%;
+    font-size: medium;
+    color: #555;
+}
+
+
+/*-------Order Summary-------*/
+.checkout .order-summary{
+    border: 1px dotted #555;
+}
+.checkout .order-summary h2{
+    text-align: left;
+    margin-bottom: 1rem;
+}
+.order-summary .table-title strong, .table-item span{
+    grid-column: span 4;
+    text-align: center;
+}
+.order-summary .table-title strong:last-child, .table-item span:last-child{
+    text-align: right;
+}
+.order-summary .table-title strong:first-child, .table-item span:first-child{
+    text-align: left;
+}
+.order-summary div{
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.order-summary hr{
+    margin: 1rem 0;
+}
+.order-summary .cod{
+    margin-top: 2rem;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+.checkout button{
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    font-size: large;
+}
+
+@media (max-width: 800px) {
+    .checkout section{
+        display: flex;
+        flex-direction: column;
+    }
+    .checkout form {
+    order: 5;
+    display: block;
+    }
+    .checkout form label{
+        margin-top: 10px;
+    }
+    .checkout form button{
+        width: 100%;
+    }
+
+}

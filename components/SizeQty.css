@@ -1,0 +1,75 @@
+
+.client-container .size-quantity{
+    grid-column: span 6;
+}
+.client-container a{
+    grid-column: span 6;
+    grid-row-start: start;
+}
+.client-container .size-quantity{
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    min-width: fit-content;
+}
+.size-quantity .price{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: orange;
+}
+
+.size-quantity .size, .size-quantity .qty, .size-quantity .price-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.size-quantity .size-container {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.stock{
+    background-color: #fff;
+    padding: 4px;
+    text-align: center;
+}
+.size-quantity .size-container strong{
+    padding: 8px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.size-quantity .qty {
+    display: flex;
+    gap: 10px;
+}
+.size-quantity .qty .updater{
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.size-quantity .stock, .size-quantity .updater, .size-quantity .size-container{
+    width: 120px;
+}
+
+.client-container button{
+    width: 100%;
+    padding: 1rem;
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width:800px) {
+    .client-container {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+    }
+    
+}

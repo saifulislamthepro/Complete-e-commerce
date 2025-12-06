@@ -1,0 +1,148 @@
+
+
+.login-page{
+    background-color: #fff;
+}
+
+.login-card{
+    margin: 1rem ;
+    background-color: #eee;
+    gap: 5px;
+    max-width: 420px;
+    padding: 10px;
+}
+/* Card */
+.login-card {
+  width: 100%;  
+  backdrop-filter: blur(15px);  
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  text-align: center;
+}
+
+/* Form */
+.login-form {
+  display: grid;
+  gap: 5px;
+}
+
+/* Input fields */
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;  
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: 0.3s ease;
+}
+
+.input-group:hover {
+  border-color: rgba(255,255,255,0.25);
+}
+
+.input-group i {
+  font-size: 16px;
+}
+
+.input-group input {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background-color: #fff;
+  height: 2.5rem;
+  padding: 1rem;
+}
+
+/* Login button */
+.login-btn {
+  background: #ff7d29;
+  color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.login-btn:hover {
+  background: #f46a14;
+}
+
+/* OR Divider */
+.or {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.or span {
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+}
+
+/* Google Button */
+.google-btn {
+  background: #fff;
+  color: #333;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  transition: 0.25s ease;
+}
+
+.google-btn:hover {
+  background: #e8e8e8;
+}
+
+.google-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.login-card a{
+    color: blue;
+    text-decoration: underline;
+}
+
+.login-card a:hover{
+    color: rgb(0, 106, 255);
+    text-decoration: none;
+}
+
+.error-msg {
+  background: #ffdddd;
+  color: #d30000;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #ffb3b3;
+}
+
+.verify-otp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #664848;
+  width: 100vw;
+}

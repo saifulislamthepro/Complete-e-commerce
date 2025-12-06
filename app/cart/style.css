@@ -1,0 +1,60 @@
+
+
+
+.cart h2{
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #eee;
+}
+
+.cart section{
+    background-color: #eee;
+    margin: 1rem 0;
+    padding: 1rem;
+    gap: 1rem;
+}
+.cart-card{
+background-color: #fff;
+border-radius: 1rem;
+width: 300px;
+text-align: center;
+gap: 0;
+padding: 1rem 0;
+}
+
+.cart-card .functions{
+    grid-column: span 6;
+}
+.cart-card .functions p, label{
+    margin-bottom: 1rem;
+}
+.cart-card>p{
+    grid-column: span 12;
+}
+.cart-card .qty-control{
+    width: 100px;
+    background-color: #fff;
+    justify-content: space-between;
+    padding: 10px;
+}
+.cart-card .qty-control button{
+    padding:  4px 10px;
+}
+
+
+.total{
+    margin-top: 1rem;
+    align-items: center;
+    margin-top: 10px;
+    align-items: center;
+}
+.total h3{
+    text-align: center;
+}
+.total a button{
+    padding: 10px 1rem;
+    margin: 10px;
+}
+.cart a button{
+    padding: 10px 1rem;
+}
