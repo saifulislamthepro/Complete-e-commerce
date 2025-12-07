@@ -4,16 +4,60 @@ import { useState, useEffect, useRef } from "react";
 import { ProductType } from "@/types/product";
 import Image from "next/image";
 import "./Products.css";
+import { addToCart } from "./cartHelpers";
 
 type Props = {
   products: ProductType[];
 };
-
+type Size  = {
+    name: string;
+    stock: number;
+};
 export default function CatProductSlider({ products }: Props) {
   const [mounted, setMounted] = useState(false);
   const [index, setIndex] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
-    const containerRef = useRef<HTMLDivElement | null>(null);
+      const [selectedSize, setSelectedSize] = useState<any>(null);
+      const [qty, setQty] = useState(1);
+      const [selectedProduct, setSelectedProduct] = useState<ProductType | null>(null);
+      const [alert, setAlert] = useState("");
+      const [showAlert, setShowAlert] = useState(false);
+    
+        // Handle selecting size
+        const handleSizeSelect = (s: Size) => {
+            setSelectedSize(s);
+            setQty(1);
+            setAlert("Size selected, now add to cart") // reset qty when selecting a new size
+        };
+    
+    const handleAddToCart = (id: string) => {
+      const product = products.find(p => p._id === id);
+      setSelectedProduct(product || null);
+        if (!selectedSize) {
+          setAlert("Please select a size");
+          setShowAlert(true);
+          return;
+        } else {
+          setAlert("Size Selected, add to cart");
+        }
+    
+        if (!product) return;
+    
+        addToCart({
+          productId: id,
+          price: product.price,
+          size: selectedSize,
+          qty,
+          title: product.title,
+          images: product.images
+        });
+    
+        setAlert("Added to cart!");
+        setSelectedSize(null);
+        setShowAlert(false);
+        window.location.href="/cart";
+      };
+    
 
   // Detect mobile screen
   useEffect(() => {
@@ -47,13 +91,41 @@ useEffect(() => {
     return (
       <div className="mobile-grid grid">
         {products.map((item) => (
-          <a className="mobile-product" key={item._id} href={`/product/${item._id}`}>
+          <div className="mobile-product" key={item._id}>
+                {/* SIZE SELECT */}
+                <div className="size flex column">
+                  <p>{alert}</p>
+                  <div className={`size-div ${showAlert ? "show-size": ""}`}>
+                    <p>Size:</p>
+                    <div className={`size-container`}>
+                        {selectedProduct?.stock.map((s, i) => (
+                            <strong
+                                key={i}
+                                onClick={() => handleSizeSelect(s)}
+                                style={{
+                                    cursor: "pointer",
+                                    borderRadius: "6px",
+                                    border: selectedSize?.name === s.name ? "2px solid black" : "1px solid #ccc",
+                                    background: selectedSize?.name === s.name ? "#fff" : "transparent"
+                                }}
+                            >
+                                {s.name}
+                            </strong>
+                        ))}
+                    </div>
+                  </div>
+                </div>
+            <a href={`/product/${item._id}`}>
             <div className="img">
             <Image src={item.images[0]} alt={item.title} fill loading="lazy"/>
             </div>
             <h4>{item.title}</h4>
-            <p>{item.price} টাকা</p>
-          </a>
+            </a>
+            <div className="flex">
+              <p>{item.price} টাকা</p>
+              <p onClick={(e)=> handleAddToCart(item._id)}><i className="fa fa-shopping-cart"></i>add to cart</p>
+            </div>
+          </div>
         ))}
       </div>
     );
@@ -65,13 +137,41 @@ useEffect(() => {
       <section>        
         <div className="web-grid grid">
           {products.map((item) => (
-            <a className="web-product" key={item._id} href={`/product/${item._id}`}>
+            <div className="web-product" key={item._id}>
+                {/* SIZE SELECT */}
+                <div className="size flex column">
+                  <p>{alert}</p>
+                  <div className={`size-div ${showAlert ? "show-size": ""}`}>
+                    <p>Size:</p>
+                    <div className={`size-container`}>
+                        {selectedProduct?.stock.map((s, i) => (
+                            <strong
+                                key={i}
+                                onClick={() => handleSizeSelect(s)}
+                                style={{
+                                    cursor: "pointer",
+                                    borderRadius: "6px",
+                                    border: selectedSize?.name === s.name ? "2px solid black" : "1px solid #ccc",
+                                    background: selectedSize?.name === s.name ? "#fff" : "transparent"
+                                }}
+                            >
+                                {s.name}
+                            </strong>
+                        ))}
+                    </div>
+                  </div>
+                </div>
+              <a href={`/product/${item._id}`}>
               <div className="img">
               <Image fill src={item.images[0]} alt={item.title} loading="lazy" />
               </div>
               <h4>{item.title}</h4>
-              <p>{item.price} টাকা</p>
-            </a>
+              </a>
+              <div className="flex">
+                <p>{item.price} টাকা</p>
+                <p onClick={(e)=> handleAddToCart(item._id)}><i className="fa fa-shopping-cart"></i>add to cart</p>
+              </div>
+            </div>
           ))}
         </div>
       </section>
@@ -88,15 +188,43 @@ useEffect(() => {
                     style={{ transform: `translateX(-${index * 260}px)` }} // card width + gap
                     >
                     {products.map((item) => (
-                        <a className="product-card" href={`/product/${item._id}`} key={item._id}>
-                        <div className="img-box">
-                            <div className="img">
-                                <Image fill src={item.images[0]} alt={item.title} loading="lazy"/>
+                        <div className="product-card" key={item._id}>
+                        {/* SIZE SELECT */}
+                        <div className="size flex column">
+                          <p>{alert}</p>
+                          <div className={`size-div ${showAlert ? "show-size": ""}`}>
+                            <p>Size:</p>
+                            <div className={`size-container`}>
+                                {selectedProduct?.stock.map((s, i) => (
+                                    <strong
+                                        key={i}
+                                        onClick={() => handleSizeSelect(s)}
+                                        style={{
+                                            cursor: "pointer",
+                                            borderRadius: "6px",
+                                            border: selectedSize?.name === s.name ? "2px solid black" : "1px solid #ccc",
+                                            background: selectedSize?.name === s.name ? "#fff" : "transparent"
+                                        }}
+                                    >
+                                        {s.name}
+                                    </strong>
+                                ))}
                             </div>
+                          </div>
                         </div>
-                        <h3>{item.title}</h3>
-                        <p>{item.price} টাকা</p>
+                        <a href={`/product/${item._id}`}>
+                          <div className="img-box">
+                              <div className="img">
+                                  <Image fill src={item.images[0]} alt={item.title} loading="lazy"/>
+                              </div>
+                          </div>
+                          <h3>{item.title}</h3>
                         </a>
+                        <div className="flex">
+                          <p>{item.price} টাকা</p>
+                          <p onClick={(e)=> handleAddToCart(item._id)}><i className="fa fa-shopping-cart"></i>add to cart</p>
+                        </div>
+                        </div>
                     ))}
                     </div>
                 </div>

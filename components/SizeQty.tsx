@@ -22,6 +22,7 @@ export default function SizeQty({ stock, price, productId, images, title, id }: 
     const [mounted, setMounted] = useState(true);
     const [selectedSize, setSelectedSize] = useState<Size | null>(null);
     const [qty, setQty] = useState(1);
+    const [alert, setAlert] = useState("");
 
     // Handle selecting size
     const handleSizeSelect = (s: Size) => {
@@ -45,8 +46,12 @@ export default function SizeQty({ stock, price, productId, images, title, id }: 
     };
 const handleAddToCart = () => {
     if (!selectedSize) {
-      alert("Please select a size");
+      setAlert("Please select a size");
       return;
+    }
+    if (selectedSize.stock === 0) {
+        setAlert("Selected size is out of stock");
+        return;
     }
 
     addToCart({
@@ -58,7 +63,8 @@ const handleAddToCart = () => {
       images
     });
 
-    alert("Added to cart!");
+    setAlert("Added to cart!");
+    window.location.href = '/cart';
   };
   useEffect(() => {
     setMounted(true);
@@ -68,6 +74,7 @@ const handleAddToCart = () => {
     return (
         <div className="client-container grid">
             <div className="size-quantity flex">
+                    <p>{alert}</p>
                 
                 {/* PRICE + STOCK */}
                 <div className="price-container flex">
@@ -121,7 +128,7 @@ const handleAddToCart = () => {
                 <button disabled={!selectedSize || selectedSize.stock === 0}>Order Now</button>
             </a>
             <a onClick={handleAddToCart}>
-                <button disabled={!selectedSize || selectedSize.stock === 0}>Add to Cart</button>
+                <button>Add to Cart</button>
             </a>
         </div>
     )

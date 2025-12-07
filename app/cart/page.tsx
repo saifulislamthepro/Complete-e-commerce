@@ -63,7 +63,7 @@ const handleDelete = (id: string, size: Size) => {
         <section>
             {cart.length === 0 && <p>No items in cart.</p>}
 
-            <div className="flex card-conatiner">
+            <div className="flex card-container column">
 
             { cart.map((item, i) => (
                 <div key={i} className="cart-card"> 

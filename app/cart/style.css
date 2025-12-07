@@ -13,6 +13,10 @@
     padding: 1rem;
     gap: 1rem;
 }
+.cart .card-container{
+    gap: 1rem;
+    align-items: center;
+}
 .cart-card{
 background-color: #fff;
 border-radius: 1rem;

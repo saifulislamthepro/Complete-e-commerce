@@ -27,14 +27,14 @@ const relatedProducts = JSON.parse(JSON.stringify(
                     <p><a href="/"><i className="fa fa-home" aria-hidden="true"></i></a>   /   <a href={`/category/${product.category}`}>{product.category}</a>   /   <a href={product._id}>{product._id}</a></p>
                 </div>
             </section>
-            <section>
+            <section className="main-section">
                 <div className="container grid">
                     <div className="image-container">
                         <ImageGallery images={product.images}/>
                     </div>
                     <div className="details">
                         <h2>{product.title}</h2>
-                        <SizeQty id={product._id} stock={product.stock} price={product.price} productId={product.productId} title={product.title} images={product.images}/>  
+                        <SizeQty id={product._id} stock={product.stock} price={product.price} productId={param.id} title={product.title} images={product.images}/>  
 
                 <div className="description"> 
                     <h3>Description:</h3> 

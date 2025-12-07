@@ -1,5 +1,5 @@
-import { connectDB } from "../../../../shared/lib/db";
-import Product from "../../../../shared/models/Product";
+import { connectDB } from "@/lib/db";
+import Product from "@/models/Product";
 import Products from "@/components/Products";
 import './style.css';
 

@@ -4,10 +4,11 @@
     flex-direction: column;
     background-color: #fff;
 }
-
+.single-product .main-section{
+    padding: 0 1rem;
+}
 .single-product .shortcuts{
     width: 100%;
-    border-bottom: 1px solid white;
     padding: 1rem;
 }
 
@@ -42,7 +43,7 @@
 }
 
 .single-product .description ul {
-    margin-left: 1rem;
+    margin: 1rem;
 }
 
 @media (max-width: 800px) {

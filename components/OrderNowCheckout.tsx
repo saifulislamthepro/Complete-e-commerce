@@ -4,6 +4,8 @@ export const dynamic = "force-dynamic";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import {signIn, useSession } from "next-auth/react";
+import { v4 as uuidv4 } from "uuid";
+import CheckoutButton from "./CheckoutButton";
 
 type Product = {
     productId: string;
@@ -15,6 +17,9 @@ type Product = {
 export default function CheckoutPage() {
     const searchParams = useSearchParams();
     const session = useSession();
+
+      // Generate unique tran_id
+    const tran_id = `TXN_${Date.now()}_${uuidv4().slice(0,8)}`;
 
     const id = searchParams?.get("id") ?? "";
     const size = searchParams?.get("size") ?? "";
@@ -29,6 +34,9 @@ export default function CheckoutPage() {
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [address, setAddress] = useState("");
+    const [city, setCity] = useState("");
+    const [state, setState] = useState("");
+    const [postcode, setPostcode] = useState("");
     const [notes, setNotes] = useState("");
     const [shippingZone, setShippingZone] = useState("inside");
     const [paymentMethod, setPaymentMethod] = useState("");
@@ -59,6 +67,9 @@ useEffect(() => {
         setNotes(data.notes || "");
         setShippingZone(data.shippingZone || "inside");
         setPaymentMethod(data.paymentMethod || "");
+        setCity(data.city || "");
+        setState(data.state || "");
+        setPostcode(data.postcode || "");
 
         // Clear saved data
         localStorage.removeItem("checkoutForm");
@@ -89,6 +100,9 @@ useEffect(() => {
         notes,
         shippingZone,
         paymentMethod,
+        city,
+        state,
+        postcode
     };
 
     localStorage.setItem("checkoutForm", JSON.stringify(formData));
@@ -119,10 +133,14 @@ useEffect(() => {
         lastName,
         phone,
         email,
+        city,
+        state,
+        postcode,
         address,
         notes,
         shippingZone,
         paymentMethod,
+        tran_id,
         userId: session.data?.user.id
     };
 
@@ -192,6 +210,36 @@ useEffect(() => {
                             />
                         </div>
 
+                        <div className="city">
+                        <label htmlFor="city">City:</label>
+                        <input
+                            type="city"
+                            id="city"
+                            value={city}
+                            onChange={(e) => setCity(e.target.value)}
+                        />
+                        </div>
+
+                        <div className="state">
+                        <label htmlFor="state">State:</label>
+                        <input
+                            type="state"
+                            id="state"
+                            value={state}
+                            onChange={(e) => setState(e.target.value)}
+                        />
+                        </div>
+
+                        <div className="postcode">
+                        <label htmlFor="postcode">zip-code:</label>
+                        <input
+                            type="zip"
+                            id="postcode"
+                            value={postcode}
+                            onChange={(e) => setPostcode(e.target.value)}
+                        />
+                        </div>
+
                         <div className="address">
                             <label>Address:</label>
                             <textarea
@@ -221,11 +269,6 @@ useEffect(() => {
                                 onChange={(e) => setNotes(e.target.value)}
                             />
                         </div>
-
-                        <button type="submit" className="place-order-btn">
-                            Place Order
-                        </button>
-
                     </form>
 
                     {/* ------------ ORDER SUMMARY ---------------- */}
@@ -265,8 +308,12 @@ useEffect(() => {
                             <strong>৳{total}</strong>
                         </div>
 
-                        <div className="cod flex">
-                            <input type="checkbox" name="COD" value={paymentMethod} onChange={()=> setPaymentMethod("Cash On Delivery")} required/> <span>Cash On Delivery</span>
+                        <div className="cod">
+                            <button onClick={(e)=> handleOrderSubmit(e)}>Cash on Delivery</button>
+                        </div>
+
+                        <div className="ssl">
+                            <CheckoutButton amount={total} tran_id={tran_id} placeOrder={handleOrderSubmit}/>
                         </div>
                     </div>
                 </section>
