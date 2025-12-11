@@ -93,7 +93,7 @@
         flex-direction: column;
     }
     .checkout form {
-    order: 5;
+    order: -5;
     display: block;
     }
     .checkout form label{
