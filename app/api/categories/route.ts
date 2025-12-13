@@ -24,9 +24,11 @@ export async function POST(req: NextRequest) {
     if (!name || !slug || !image)
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
 
-    // Folder for uploads
-    const uploadDir = path.join(process.cwd(), "public", "uploads");
-    if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
+    // ✅ GLOBAL uploads directory (outside Next.js)
+    const uploadDir = "/ravaa/uploads";
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
 
     // Save image file
     const bytes = Buffer.from(await image.arrayBuffer());

@@ -64,7 +64,17 @@
     border: none;
     cursor: pointer;
 }
-
+.wholesale{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    background-color: #fff;
+    padding: 1rem;
+}
+.select-sell button, .wholesale button{
+    padding: 1rem 2rem;
+    margin-right: 1rem;
+}
 @media (max-width:800px) {
     .client-container {
         display: flex;

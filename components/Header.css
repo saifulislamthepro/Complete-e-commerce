@@ -1,20 +1,39 @@
-header .top-bar section{
-  justify-content: space-between;
-  padding: 6px 1rem;
-  border-bottom: 1px solid #fff;
+
+header .top-bar {
+  width: 100%;
+  padding: 8px;
 }
 
-header .logo-container{
+header .top-bar section{
   justify-content: space-between;
-  padding: 5px;
-  background: none;
 }
 
 header .logo-container .icons-container i{
   font-size: 20px;
+}
+header .logo-container .icons-container .icon-a:first-child{
   padding-right: 2rem;
 }
+.logo-nav{
+  width: 100%;
+  background-color: #eee;
+}
+.logo-container{
+  gap: 0;
+  align-items: center;
+  width: 100%;
+}
+.logo-container .logo{
+  grid-column: span 3;
+}
+.logo-container .search{
+  grid-column: span 5;
+}
 
+.logo-container .icons-container{
+  grid-column: span 4;
+  justify-content: flex-end;
+}
 .logo-container .search input{
   width: 400px;
   border: 1px solid orange;
@@ -22,10 +41,11 @@ header .logo-container .icons-container i{
 }
 
 .logo-container .search button{
-  width: 40px;
+  width: 80px;
   background-color:  orange;
   border: none;
   color: white;
+  border-radius: 0px;
 }
 
 .logo-container .search button, input{
@@ -45,6 +65,9 @@ header .navbar-container.scrolled{
   top: 0;
   z-index: 100;
 }
+.nav-header section{
+  max-width: 100%;
+}
 header .navbar-container nav{
   gap: 0;
 }
@@ -55,8 +78,8 @@ header .navbar-container nav{
 }
 .dropdown h3{
   text-align: right;
-  padding: 15px 0;
-  padding-right: 2rem;
+  padding: 16px 0;
+  padding-right: 7rem;
 }
 .dropdown-toggle{
   position: relative;
@@ -88,6 +111,7 @@ header .navbar-container nav{
 }
 header nav .menu-container{
   grid-column: span 8;
+  padding-left: 6rem;
 }
 header nav .menu-container .links{
   width: 100%;
@@ -135,18 +159,25 @@ header nav .links h3:hover::after{
     display: flex;
     padding-right: 2rem;
   }
+  .logo-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
   .logo-container .logo{
     width: 150px;
   }
   .logo-container .search{
     display: none;
   }
-
   .navbar-container .dropdown{
     grid-column: span 6;
     z-index: 200;
   }
 
+  .navbar-container .dropdown h3{
+    padding-right: 2rem;
+  }
   .menu-container {
     position: relative;
   }
@@ -183,6 +214,7 @@ header nav .links h3:hover::after{
   }
   header nav .menu-container{
   grid-column: span 6;
+  padding: 0;
 }
 
 }

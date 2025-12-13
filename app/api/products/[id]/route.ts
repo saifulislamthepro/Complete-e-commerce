@@ -15,9 +15,13 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
 export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
   await connectDB();
 
-  const data = await req.formData();
-  const uploadDir = path.join(process.cwd(), "public", "uploads");
-  if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
+  const data = await req.formData();    
+  
+  // ✅ GLOBAL uploads directory (outside Next.js)
+      const uploadDir = "/ravaa/uploads";
+      if (!fs.existsSync(uploadDir)) {
+        fs.mkdirSync(uploadDir, { recursive: true });
+      }
 
   const images = data.getAll("images") as File[];
   const savedImagePaths: string[] = [];

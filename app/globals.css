@@ -25,11 +25,11 @@ a {
 }
 .page{
   min-height: 100vh;
+  background-color: #eee;
 }
 section{
-  max-width: 1200px;
+  max-width: 1300px;
   width: 100%;
-  background-color: #eee;
 }
 
 .flex{

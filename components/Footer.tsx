@@ -36,7 +36,7 @@ if (!mounted) return null;
             { /* <!-- Contact --> */}
                 <div className="footer-section">
                 <h3>Contact</h3>
-                <ul>
+                <ul className="contact">
                     <li><i className="fas fa-envelope"></i> info@ravaabd.com</li>
                     <li><i className="fas fa-map-marker-alt"></i> flat: 9A, House: 137/10, SR Plaza (9th floor),  <br />Mazar Road, Mirpur-01, Dhaka-1216, Bangladesh </li>
                 </ul>

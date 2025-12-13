@@ -14,10 +14,12 @@ export async function POST(req: Request) {
   await connectDB();
   const data = await req.formData();
 
-  // Folder for uploads
-  const uploadDir = path.join(process.cwd(), "public", "uploads");
-  if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
-
+    // ✅ GLOBAL uploads directory (outside Next.js)
+    const uploadDir = "/ravaa/uploads";
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+    
   // Handle image uploads
   const images = data.getAll("images") as File[];
   const savedImagePaths: string[] = [];

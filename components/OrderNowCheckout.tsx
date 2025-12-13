@@ -23,6 +23,7 @@ export default function CheckoutPage() {
 
     const id = searchParams?.get("id") ?? "";
     const size = searchParams?.get("size") ?? "";
+    const WholeSaleTotal = Number(searchParams?.get("total"));
     const qty = Number(searchParams?.get("qty") ?? 1) || 1;
 
     const [product, setProduct] = useState<Product | null>(null);
@@ -80,7 +81,8 @@ useEffect(() => {
     
     if (!mounted) return null;
 
-    const subtotal = product ? product.price * qty : 0;
+
+    const subtotal = WholeSaleTotal? WholeSaleTotal :  product ? product.price * qty : 0;
     const total = subtotal + shippingCost;
 
     // ---------------- ORDER SUBMIT ---------------- //

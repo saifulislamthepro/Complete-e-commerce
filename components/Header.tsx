@@ -65,15 +65,15 @@ export default function Navbar() {
           <div className="login"><a href="/login"><p>SignUp/Login</p></a></div>
         </section>
       </div>
-      <div className="flex">
-        <section className="logo-container flex">
-          <a href="/">
-            <div  className="logo"> <img src="/logo/Rava-Logo-white-Bg.png" alt="logo" /></div>
+      <div className="flex logo-nav">
+        <section className="logo-container grid">
+          <a className="logo" href="/">
+            <div> <img src="/logo/Rava-Logo-white-Bg.png" alt="logo" /></div>
           </a>
           <div className="search">
             <SearchButton/>
           </div>
-          <div className="icons-container">
+          <div className="icons-container flex">
             {/* Cart */}
             <a href="/cart" className="icon-a">
               <i className="fa fa-shopping-cart"></i>
@@ -87,7 +87,7 @@ export default function Navbar() {
         </section>
         </div>
 
-      <div className="flex">
+      <div className="flex nav-header">
       <section className={scrolled ? "navbar-container scrolled" : "navbar-container"} ref={menuRef}>
 
         <nav className={`grid ${mobileOpen ? "open" : ""}`}>
