@@ -15,7 +15,7 @@ export async function DELETE(_: Request, { params }: { params: Promise<{ id: str
     // Remove image from public/uploads
     if (category.image) {
           // ✅ GLOBAL uploads directory (outside Next.js)
-          const uploadDir = "/ravaa/uploads";
+          const uploadDir = "ravaa/uploads";
           if (!fs.existsSync(uploadDir)) {
             fs.mkdirSync(uploadDir, { recursive: true });
           }
@@ -62,7 +62,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
 
       // Delete old image
       if (category.image) {
-        const oldPath = path.join(process.cwd(), "public", category.image);
+        const oldPath = path.join(process.cwd(), uploadDir, category.image);
         if (fs.existsSync(oldPath)) fs.unlinkSync(oldPath);
       }
 

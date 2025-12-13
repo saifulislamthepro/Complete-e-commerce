@@ -73,8 +73,13 @@ export async function DELETE(req: Request, { params }: { params: Promise<{ id: s
         if (!filename) {
           console.log("⚠ Invalid URL format:", url);
           return;
-        }
-        const filePath = path.join(process.cwd(), "public", "uploads", filename);
+        }  
+  // ✅ GLOBAL uploads directory (outside Next.js)
+      const uploadDir = "ravaa/uploads";
+      if (!fs.existsSync(uploadDir)) {
+        fs.mkdirSync(uploadDir, { recursive: true });
+      }
+        const filePath = path.join(process.cwd(), uploadDir, filename);
 
         if (fs.existsSync(filePath)) {
           fs.unlinkSync(filePath);
