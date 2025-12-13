@@ -51,8 +51,7 @@ export default function ImageGallery({ images }: Props) {
       >
         <button onClick={prevImage} className="nav-btn left">❮</button>
 
-        <Image
-          fill
+        <img
           ref={imageRef}
           src={images[activeIndex]}
           alt="product"

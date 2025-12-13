@@ -115,7 +115,7 @@ useEffect(() => {
                 </div>
             <a href={`/product/${item._id}`}>
             <div className="img">
-            <Image src={item.images[0]} alt={item.title} fill loading="lazy"/>
+            <img src={item.images[0]} alt={item.title} loading="lazy"/>
             </div>
             <h4>{item.title}</h4>
             </a>
@@ -160,7 +160,7 @@ if (products.length < 4) {
                 </div>
               <a href={`/product/${item._id}`}>
                 <div className="img">
-                <Image src={item.images[0]} alt={item.title} fill loading="lazy"/>
+                <img src={item.images[0]} alt={item.title} loading="lazy"/>
                 </div>
                 <h4>{item.title}</h4>
               </a>
@@ -212,7 +212,7 @@ if (products.length < 4) {
                           <a href={`/product/${item._id}`} key={item._id}>
                             <div className="img-box">
                               <div className="img">
-                                <Image fill src={item.images[0]} alt={item.title} loading="lazy"/>
+                                <img src={item.images[0]} alt={item.title} loading="lazy"/>
                               </div>
                             </div>
                             <h3>{item.title}</h3>
