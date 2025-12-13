@@ -123,8 +123,12 @@
   padding: 1rem;
 }
 .web-grid .web-product .img{
-  position: relative;
-  height: 250px;
+  height: fit-content;
+}
+
+.web-grid .web-product .img img{
+  width: 100%;
+  height: auto;
 }
 .size-div{
   display: none;

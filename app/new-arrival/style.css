@@ -26,15 +26,16 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    height: 300px;
 }
 
 .img-box .img {
     width: 100%;
-    height: 100%;
-    position: relative;
+    height: fit-content;
 }
-
+.img-box .img img{
+    width: 100%;
+    height: auto;
+}
 .details {
     padding: 12px;
 }

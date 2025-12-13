@@ -117,7 +117,7 @@ useEffect(() => {
                 </div>
             <a href={`/product/${item._id}`}>
             <div className="img">
-            <Image src={item.images[0]} alt={item.title} fill loading="lazy"/>
+            <img src={item.images[0]} alt={item.title} loading="lazy"/>
             </div>
             <h4>{item.title}</h4>
             </a>
@@ -163,7 +163,7 @@ useEffect(() => {
                 </div>
               <a href={`/product/${item._id}`}>
               <div className="img">
-              <Image fill src={item.images[0]} alt={item.title} loading="lazy" />
+              <img src={item.images[0]} alt={item.title} loading="lazy" />
               </div>
               <h4>{item.title}</h4>
               </a>
