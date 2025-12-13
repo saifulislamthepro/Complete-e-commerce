@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
 
     // ✅ GLOBAL uploads directory (outside Next.js)
-    const uploadDir = "/root/ravaa/uploads";
+    const uploadDir = "/var/www/ravaa/uploads";
     if (!fs.existsSync(uploadDir)) {
       fs.mkdirSync(uploadDir, { recursive: true });
     }

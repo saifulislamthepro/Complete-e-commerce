@@ -15,7 +15,7 @@ export async function POST(req: Request) {
   const data = await req.formData();
 
     // ✅ GLOBAL uploads directory (outside Next.js)
-    const uploadDir = "/root/ravaa/uploads";
+    const uploadDir = "/var/www/ravaa/uploads";
     if (!fs.existsSync(uploadDir)) {
       fs.mkdirSync(uploadDir, { recursive: true });
     }
