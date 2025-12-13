@@ -15,7 +15,7 @@ export async function DELETE(req: NextRequest) {
     // 
     
     // ✅ GLOBAL uploads directory (outside Next.js)
-    const uploadDir = "/ravaa/uploads";
+    const uploadDir = "ravaa/uploads";
     if (!fs.existsSync(uploadDir)) {
       fs.mkdirSync(uploadDir, { recursive: true });
     }

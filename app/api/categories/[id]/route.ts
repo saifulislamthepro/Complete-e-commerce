@@ -50,7 +50,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
     if (image) {    
       
       // ✅ GLOBAL uploads directory (outside Next.js)
-        const uploadDir = "/ravaa/uploads";
+        const uploadDir = "ravaa/uploads";
         if (!fs.existsSync(uploadDir)) {
           fs.mkdirSync(uploadDir, { recursive: true });
         }
