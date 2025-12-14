@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/db";
 import Order from "@/models/Order";
+import User from "@/models/User";
 
 export async function POST(req: Request) {
   try {
@@ -77,4 +78,12 @@ export async function POST(req: Request) {
       { status: 500 }
     );
   }
+}
+
+export async function GET() {
+  await connectDB();
+
+  const orders = await Order.find({});
+
+  return NextResponse.json(orders);
 }

@@ -84,3 +84,12 @@
   font-size: 24px;
   color: orange;
 }
+
+.payment{
+  width: 100%;
+}
+
+.payment img{
+  width: 100%;
+  height: auto;
+}

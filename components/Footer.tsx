@@ -52,6 +52,10 @@ if (!mounted) return null;
                 </div>
             </div>
 
+            <div className="payment">
+                <img src="/payment.jpg" alt="payment" />
+            </div>
+
             <div className="footer-bottom">
                 © 2025 SmartGen Digital. All rights reserved.
             </div>
