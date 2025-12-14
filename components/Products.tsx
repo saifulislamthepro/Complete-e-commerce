@@ -90,38 +90,16 @@ useEffect(() => {
       <div className="mobile-grid grid">
         {products.map((item) => (
           <div className="mobile-product" key={item._id} >
-                {/* SIZE SELECT */}
-                <div className="size flex column">
-                  <p>{alert}</p>
-                  <div className={`size-div ${showAlert ? "show-size": ""}`}>
-                    <p>Size:</p>
-                    <div className={`size-container`}>
-                        {selectedProduct?.stock.map((s, i) => (
-                            <strong
-                                key={i}
-                                onClick={() => handleSizeSelect(s)}
-                                style={{
-                                    cursor: "pointer",
-                                    borderRadius: "6px",
-                                    border: selectedSize?.name === s.name ? "2px solid black" : "1px solid #ccc",
-                                    background: selectedSize?.name === s.name ? "#fff" : "transparent"
-                                }}
-                            >
-                                {s.name}
-                            </strong>
-                        ))}
-                    </div>
-                  </div>
-                </div>
             <a href={`/product/${item._id}`}>
             <div className="img">
             <img src={item.images[0]} alt={item.title} loading="lazy"/>
             </div>
             <h4>{item.title}</h4>
             </a>
-              <a href={`/product/${item._id}`} className="flex">
-                <button>View Details</button>
-              </a>
+            <div className="flex">
+              <p>{item.price} টাকা</p>
+              <p>View Details</p>
+            </div>
           </div>
         ))}
       </div>
@@ -134,38 +112,16 @@ if (products.length < 4) {
         <div className="web-grid grid">
           {products.map((item) => (
             <div className="web-product" key={item._id} >
-                {/* SIZE SELECT */}
-                <div className="size flex column">
-                  <p>{alert}</p>
-                  <div className={`size-div ${showAlert ? "show-size": ""}`}>
-                    <p>Size:</p>
-                    <div className={`size-container`}>
-                        {selectedProduct?.stock.map((s, i) => (
-                            <strong
-                                key={i}
-                                onClick={() => handleSizeSelect(s)}
-                                style={{
-                                    cursor: "pointer",
-                                    borderRadius: "6px",
-                                    border: selectedSize?.name === s.name ? "2px solid black" : "1px solid #ccc",
-                                    background: selectedSize?.name === s.name ? "#fff" : "transparent"
-                                }}
-                            >
-                                {s.name}
-                            </strong>
-                        ))}
-                    </div>
-                  </div>
-                </div>
               <a href={`/product/${item._id}`}>
                 <div className="img">
                 <img src={item.images[0]} alt={item.title} loading="lazy"/>
                 </div>
                 <h4>{item.title}</h4>
               </a>
-              <a href={`/product/${item._id}`} className="flex">
-                <button>View Details</button>
-              </a>
+              <div className="flex">
+                <p>{item.price} টাকা</p>
+                <p>View details</p>
+              </div>
             </div>
           ))}
         </div>
@@ -184,29 +140,6 @@ if (products.length < 4) {
                     >
                     {products.map((item) => (
                         <div className="product-card">
-                      {/* SIZE SELECT */}
-                      <div className="size flex column">
-                        <p>{alert}</p>
-                        <div className={`size-div ${showAlert ? "show-size": ""}`}>
-                          <p>Size:</p>
-                          <div className={`size-container`}>
-                              {selectedProduct?.stock.map((s, i) => (
-                                  <strong
-                                      key={i}
-                                      onClick={() => handleSizeSelect(s)}
-                                      style={{
-                                          cursor: "pointer",
-                                          borderRadius: "6px",
-                                          border: selectedSize?.name === s.name ? "2px solid black" : "1px solid #ccc",
-                                          background: selectedSize?.name === s.name ? "#fff" : "transparent"
-                                      }}
-                                  >
-                                      {s.name}
-                                  </strong>
-                              ))}
-                          </div>
-                        </div>
-                      </div>
                           <a href={`/product/${item._id}`} key={item._id}>
                             <div className="img-box">
                               <div className="img">
@@ -215,9 +148,10 @@ if (products.length < 4) {
                             </div>
                             <h3>{item.title}</h3>
                           </a>
-                          <a href={`/product/${item._id}`} className="flex">
-                            <button>View Details</button>
-                          </a>
+                          <div className="flex">
+                            <p>{item.price} টাকা</p>
+                            <p>View Details</p>
+                          </div>
                         </div>
                     ))}
                     </div>
