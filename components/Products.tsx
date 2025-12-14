@@ -119,10 +119,9 @@ useEffect(() => {
             </div>
             <h4>{item.title}</h4>
             </a>
-            <div className="flex">
-              <p>{item.price} টাকা</p>
-              <p onClick={(e)=> handleAddToCart(item._id)}><i className="fa fa-shopping-cart"></i>add to cart</p>
-            </div>
+              <a href={`/product/${item._id}`} className="flex">
+                <button>View Details</button>
+              </a>
           </div>
         ))}
       </div>
@@ -164,10 +163,9 @@ if (products.length < 4) {
                 </div>
                 <h4>{item.title}</h4>
               </a>
-              <div className="flex">
-                <p>{item.price} টাকা</p>
-                <p onClick={()=> handleAddToCart(item._id)}><i className="fa fa-shopping-cart"></i>add to cart</p>
-              </div>
+              <a href={`/product/${item._id}`} className="flex">
+                <button>View Details</button>
+              </a>
             </div>
           ))}
         </div>
@@ -217,10 +215,9 @@ if (products.length < 4) {
                             </div>
                             <h3>{item.title}</h3>
                           </a>
-                          <div className="flex">
-                            <p>{item.price} টাকা</p>
-                            <p onClick={(e)=> handleAddToCart(item._id)}><i className="fa fa-shopping-cart"></i>add to cart</p>
-                          </div>
+                          <a href={`/product/${item._id}`} className="flex">
+                            <button>View Details</button>
+                          </a>
                         </div>
                     ))}
                     </div>

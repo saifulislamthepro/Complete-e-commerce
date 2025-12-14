@@ -121,10 +121,9 @@ useEffect(() => {
             </div>
             <h4>{item.title}</h4>
             </a>
-            <div className="flex">
-              <p>{item.price} টাকা</p>
-              <p onClick={(e)=> handleAddToCart(item._id)}><i className="fa fa-shopping-cart"></i>add to cart</p>
-            </div>
+              <a href={`/product/${item._id}`} className="flex">
+                <button>View Details</button>
+              </a>
           </div>
         ))}
       </div>
@@ -167,10 +166,9 @@ useEffect(() => {
               </div>
               <h4>{item.title}</h4>
               </a>
-              <div className="flex">
-                <p>{item.price} টাকা</p>
-                <p onClick={(e)=> handleAddToCart(item._id)}><i className="fa fa-shopping-cart"></i>add to cart</p>
-              </div>
+              <a href={`/product/${item._id}`} className="flex">
+                <button>View Details</button>
+              </a>
             </div>
           ))}
         </div>
@@ -215,15 +213,14 @@ useEffect(() => {
                         <a href={`/product/${item._id}`}>
                           <div className="img-box">
                               <div className="img">
-                                  <Image fill src={item.images[0]} alt={item.title} loading="lazy"/>
+                                  <img src={item.images[0]} alt={item.title} loading="lazy"/>
                               </div>
                           </div>
                           <h3>{item.title}</h3>
                         </a>
-                        <div className="flex">
-                          <p>{item.price} টাকা</p>
-                          <p onClick={(e)=> handleAddToCart(item._id)}><i className="fa fa-shopping-cart"></i>add to cart</p>
-                        </div>
+                        <a href={`/product/${item._id}`} className="flex">
+                          <button>View Details</button>
+                        </a>
                         </div>
                     ))}
                     </div>
