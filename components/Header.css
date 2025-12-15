@@ -9,7 +9,7 @@ header .top-bar section{
 }
 
 header .logo-container .icons-container i{
-  font-size: 30px;
+  font-size: 34px;
 }
 header .logo-container .icons-container .icon-a:first-child{
   padding-right: 2rem;
@@ -24,6 +24,7 @@ header .logo-container .icons-container .icon-a:first-child{
   width: 100%;
 }
 .logo-container .logo{
+  margin-top: 6px;
   grid-column: span 3;
 }
 .logo-container .search{
