@@ -10,8 +10,9 @@ const UserSchema = new Schema(
     role: {type: String, default: "user"},
     resetOtp: {type: String},
     resetOtpExpire: {type: Date},
+    phone: {type: String}
   },
   { timestamps: true }
 );
 
-export default models.User || model("User", UserSchema);
+export default models?.User || model("User", UserSchema);

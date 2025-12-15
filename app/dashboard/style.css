@@ -1,82 +1,118 @@
-
-
-.dashboard .page-title{
-    background-color: #eee;
-    height: 100px;
+.dashboard h1{
+    margin: 1rem 0;
+}
+.dashboard {
+    padding: 0 1rem;
 }
 
-.dashboard section{
-    margin: 20px 0;
-}
-.dashboard section .profile{
-    background-color: #eee;
-    grid-column: span 4;
+.dashboard>div>section{
+    overflow: hidden;
 }
 
-.dashboard section .profile .profile-component i{
-    margin-right: 1rem;
-}
-.dashboard section .profile .img{
-    padding: 1rem;
-}
-.dashboard section .profile ul li{
+.dashboard .profile ul li{
     list-style: none;
-    padding: 5px 1rem;
-    font-size: large;
 }
-
-.dashboard section .profile .show-orders button{
-    width: 90%;
-    height: 40px;
-    border: none;
-    font-size: medium;
+.dashboard .profile{
     background-color: #fff;
-    text-align: left;
+    border-radius: 10px;
     padding: 1rem;
-    margin-bottom: 5px;
+    height: fit-content;
+    grid-column: span 4;
+    position: sticky;
 }
-.dashboard section .profile .settings button{
+.dashboard .profile-component{
+    gap: 1rem;
+}
+.settings button{
+    padding: 10px ;
+    margin: 5px 0;
     width: 100%;
-    height: 40px;
-    border: none;
-    font-size: large;
-    background-color: #eee;
-    color: #333;
 }
-.dashboard section .profile .settings button:hover{
-    background-color: #fff;
-}
-.dashboard section .orders{
-    background-color: #eee;
+
+/* --- Orders Section --- */
+.dashboard .orders{
     grid-column: span 8;
-}
-.dashboard section .orders p{
-    padding: 1rem;
+    height: fit-content;
 }
 
-.dashboard h2{
-    border-bottom: 4px solid #ffffff;
-    padding: 1rem;
-    margin-bottom: 10px;
-    font-size: 1.5rem;
+.order-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
-.order-container li{
-    justify-content: space-between;
-    background-color: #fff;
-    padding: 1rem;
+.order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
-.order-container h2{
-    justify-content: space-between;
-    background-color: #fff;
+
+.order-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
-@media (max-width:800px) {
-    .dashboard section{
+
+.item-details h3 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.item-details p {
+  font-size: 0.9rem;
+  margin-bottom: 0.1rem;
+}
+
+.order-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.order-meta .status {
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.status.pending {
+  background-color: #fff4e5;
+  color: #ff9500;
+}
+
+.status.delivered {
+  background-color: #e6f9f0;
+  color: #34c759;
+}
+
+.status.cancelled {
+  background-color: #fde6e6;
+  color: #ff3b30;
+}
+
+.order-notes {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #555;
+}
+
+@media (max-width: 800px) {
+    .dashboard>div>section{
         display: block;
     }
 
-    .dashboard section .profile,
-    .dashboard section .orders{
-        margin: 10px 0;
-    }
+    .dashboard .profile{
+        margin-bottom: 1rem;
+}
 }

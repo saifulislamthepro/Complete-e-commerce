@@ -25,13 +25,16 @@ export default function AdminOrdersPage() {
 
   // Change status
   const markDelivered = async (orderId: string) => {
+  try {
     const res = await fetch(`/api/admin/orders/${orderId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ status: "delivered" }),
     });
 
-    if (res.ok) {
+    const data = await res.json();
+
+    if (res.ok && data?.order) {
       setOrders((prev) =>
         prev.map((o) =>
           o._id === orderId ? { ...o, status: "delivered" } : o
@@ -41,7 +44,12 @@ export default function AdminOrdersPage() {
     } else {
       alert("Failed to update");
     }
-  };
+  } catch (err) {
+    console.error(err);
+    alert("Failed to update");
+  }
+};
+
 
   if (loading) return <p>Loading orders...</p>;
 
@@ -89,7 +97,7 @@ export default function AdminOrdersPage() {
                 <p><strong>Zone:</strong> {order.shippingZone}</p>
                 <p><strong>Notes:</strong> {order.notes || "No notes"}</p>
 
-                {order.status === "pending" && (
+                {order.status !== "CANCELED" || order.status !== "FAILED" || order.status !== "Delivered" && (
                   <button
                     className="deliver-btn"
                     onClick={() => markDelivered(order._id)}

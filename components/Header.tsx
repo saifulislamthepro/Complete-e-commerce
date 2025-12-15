@@ -61,7 +61,7 @@ export default function Navbar() {
     <header className="navbar">
       <div className="top-bar flex">
         <section className="flex">
-          <div className="phone"><i className="fa-solid fa-phone"></i>+8801901929592, +8801901929593</div>
+          <div className="phone"><i className="fa-solid fa-phone"></i><a href="tel:+8801901929592">+8801901929592</a> | <a href="tel:+8801901929593">+8801901929593</a></div>
           <div className="login"><a href="/login"><p>Login</p></a></div>
         </section>
       </div>

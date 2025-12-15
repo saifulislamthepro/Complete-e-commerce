@@ -46,8 +46,15 @@ if (!mounted) return null;
                 <div className="footer-section">
                 <h3>Follow Us</h3>
                 <div className="social-icons">
-                    <a href="https://www.facebook.com/ravaafashion"><i className="fab fa-facebook-f"></i></a>
-                    <a href="https://www.youtube.com/ravaafashion"><i className="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/ravaafashion" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i className="fab fa-facebook-f"></i></a>
+
+                    <a href="https://www.youtube.com/@RavaaFashion"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><i className="fab fa-youtube"></i></a>
                 </div>
                 </div>
             </div>
@@ -57,7 +64,7 @@ if (!mounted) return null;
             </div>
 
             <div className="footer-bottom">
-                © 2025 SmartGen Digital. All rights reserved.
+                © 2025 SmartGenIT. All rights reserved.
             </div>
         </footer>
     )

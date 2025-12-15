@@ -7,9 +7,9 @@ export async function POST(req: Request) {
   try {
     await connectDB();
     const body = await req.json();
-    const { name, email, password } = body;
+    const { name, email, password, phone } = body;
 
-    if (!name || !email || !password)
+    if (!name || !email || !password || !phone)
       return NextResponse.json({ error: "All fields required" }, { status: 400 });
 
     const existingUser = await User.findOne({ email });
@@ -21,6 +21,7 @@ export async function POST(req: Request) {
     await User.create({
       name,
       email,
+      phone,
       password: hashedPassword,
       provider: "credentials",
     });
