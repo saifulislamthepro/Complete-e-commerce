@@ -68,7 +68,7 @@ export default function Navbar() {
       <div className="flex logo-nav">
         <section className="logo-container grid">
           <a className="logo" href="/">
-            <div> <img src="/logo/Rava-Logo-white-Bg.png" alt="logo" /></div>
+            <div> <img src="/logo/Logo.png" alt="logo" /></div>
           </a>
           <div className="search">
             <SearchButton/>

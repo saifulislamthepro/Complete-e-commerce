@@ -55,8 +55,7 @@ if (!mounted) return null;
 
     else if (activeSidebar === 'products') 
         return (
-            <div className="main-page">
-                <h3>Products</h3>
+            <div>
                 <AdminProducts/>
             </div>
         );

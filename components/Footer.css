@@ -65,8 +65,14 @@
   justify-content: center;
   border-radius: 50%;
   transition: 0.3s;
+  margin: 1rem 0;
 }
-
+.social-icons a:last-child{
+  background-color: red;
+}
+.social-icons a:first-child{
+  background-color: rgb(0, 106, 255);
+}
 .social-icons a:hover {
   background: #ff7a00; /* Orange Hover */
   transform: translateY(-3px);

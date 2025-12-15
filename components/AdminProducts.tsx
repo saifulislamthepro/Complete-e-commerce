@@ -75,7 +75,7 @@ if (!mounted) return null;
 
       {!loading && products.length === 0 && <p>No products found.</p>}
 
-      <div className="product-list flex">
+      <div className="product-list grid">
         {products.map((p, i) => (
           <div key={i} className="product-card">
             <h4>{p.title}</h4>

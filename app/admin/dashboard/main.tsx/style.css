@@ -56,3 +56,9 @@ hr{
         .users-table th {
           background-color: #f4f4f4;
         }
+
+        @media (max-width: 800px) {
+          .overview .card{
+            grid-column: span 6;
+          }
+        }

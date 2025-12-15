@@ -13,7 +13,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 /* Slider track */
@@ -59,7 +59,7 @@
 
 /* MOBILE GRID */
 .mobile-grid{
-  padding: 1rem;
+  padding: 1rem 0;
 }
 .mobile-product {
   border: 1px solid #eee;
@@ -87,7 +87,7 @@
   cursor: pointer;
 }
 .web-grid{
-  padding: 1rem;
+  padding: 1rem 0;
 }
 .web-grid .web-product{
   grid-column: span 3;

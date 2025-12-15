@@ -4,7 +4,6 @@ header, footer{
 }
 .main-page{
     min-height: 100vh;
-    margin: 2rem 0;
 }
 
 .main-page h2{
@@ -12,7 +11,7 @@ header, footer{
 }
 
 form{
-    margin:0 2rem ;
+    margin:0 1rem ;
 }
  form .input-container input, button, textarea, select{
     width: 100%;
@@ -82,4 +81,10 @@ form{
     font-size: larger;
     color: red;
     background-color: #fff;
+}
+
+@media (max-width: 800px) {
+    form{
+    margin: 0;
+}
 }
