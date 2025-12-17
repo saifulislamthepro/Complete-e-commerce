@@ -19,6 +19,7 @@ type Product = {
   description: string;
   stock: Size[];
   images: string[];
+  thumbnail: string;
 };
 
 export default function AdminProducts() {
@@ -88,7 +89,7 @@ if (!mounted) return null;
             <p>Category: {p.category}</p>
 
             <div className="product-images">
-                <img className="product-thumbnail" src={p.images[0]} alt={p.title}/>               
+                <img className="product-thumbnail" src={p.thumbnail} alt={p.title}/>               
             </div>
 
             <div className="stock-info">
