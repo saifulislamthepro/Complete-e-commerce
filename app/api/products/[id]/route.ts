@@ -49,7 +49,7 @@ if (finalImages.length > 0) {
   const firstImagePath = path.join(uploadDir, firstImageFilename);
 
   // Thumb filename: add "thumb-" at start, keep rest of name intact
-  const thumbFilename = `thumb-${firstImageFilename}`;
+  const thumbFilename = `thumb-${firstImageFilename}.webp`;
   const thumbPath = path.join(uploadDir, thumbFilename);
 
   // Generate thumbnail
