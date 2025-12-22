@@ -69,7 +69,6 @@ export default async function DashboardPage() {
                   <ul>
                     <li><strong>Name: </strong>{session?.user.name}</li>
                     <li><strong>Email: </strong>{session?.user.email}</li>
-                    <li><strong>Role: </strong>{session?.user.role}</li>
                   </ul>
                 </div>
                 <h2>Account Settings</h2>
