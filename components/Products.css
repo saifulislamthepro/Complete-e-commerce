@@ -93,11 +93,11 @@
   font-weight: 600;
 }
 .mobile-product div p:last-child, .web-product div p:last-child, .product-card div p:last-child{
-  font-size: 16px;
+  font-size: 12px;
   background-color: #eee;
-  padding: 5px;
   border-radius: 4px;
   cursor: pointer;
+  padding: 10px 4px;
 }
 .web-grid{
   padding: 1rem 0;

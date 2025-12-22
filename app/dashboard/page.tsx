@@ -76,6 +76,7 @@ export default async function DashboardPage() {
                   <button>
                     <i className="fa fa-cog" aria-hidden="true"></i>Account Settings
                   </button>
+                  {(session?.user.role === "admin")?<a href="/admin/dashboard"> <button>Admin Dashboard</button></a> : ""}                  
                   <LogOutComp/>
                 </div>
               </div>

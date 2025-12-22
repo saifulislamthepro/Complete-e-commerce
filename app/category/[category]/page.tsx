@@ -15,7 +15,7 @@ export default async function ({ params }: { params: Promise<{ category: string 
         <div className="category-product-page page">
             <div className="flex">
                 <section>
-                    <h3>{param.category.toLocaleUpperCase()} Category products</h3>
+                    <h3 className="flex">{param.category.toLocaleUpperCase()} Category products</h3>
                     <Products products={products}/>
                 </section>
             </div>
